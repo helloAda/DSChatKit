@@ -8,6 +8,12 @@
 
 #import "DSInputToolView.h"
 
+@interface DSInputToolView ()
+
+@property (nonatomic,copy)  NSArray<NSNumber *> *types;
+
+@end
+
 @implementation DSInputToolView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -37,10 +43,16 @@
     [_moreBtn sizeToFit];
     
     _recordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_recordBtn setImage:[UIImage imageName:@"" forState:UIControlStateNormal]];
-    [_recordBtn setImage:[UIImage imageName:@"" forState:UIControlStateHighlighted]];
+    [_recordBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_recordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
+    [_recordBtn setBackgroundImage:[[UIImage imageName:@""] resizableImageWithCapInsets:UIEdgeInsetsMake(15,80,15,80) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
+    _recordBtn.exclusiveTouch = YES;
     [_recordBtn sizeToFit];
     
+    
     _inputTextBackImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [_inputTextBackImage setImage:[[UIImage imageName:@""] resizableImageWithCapInsets:UIEdgeInsetsMake(15,80,15,80) resizingMode:UIImageResizingModeStretch]];
+    
+
 }
 @end

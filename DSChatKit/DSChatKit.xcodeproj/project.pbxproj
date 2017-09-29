@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
 		77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */; };
 		77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67E1F7D2EE700154EF9 /* ViewController.m */; };
 		77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E0B6801F7D2EE700154EF9 /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
+		775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
 		77E0B6771F7D2EE700154EF9 /* DSChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E0B67A1F7D2EE700154EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 				77E0B6AF1F7D2F0C00154EF9 /* DSInputToolView.m */,
 				77E0B6B01F7D2F0C00154EF9 /* DSInputView.h */,
 				77E0B6B11F7D2F0C00154EF9 /* DSInputView.m */,
+				775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */,
+				775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
+				775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
