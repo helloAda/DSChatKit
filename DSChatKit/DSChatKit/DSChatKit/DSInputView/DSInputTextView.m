@@ -7,6 +7,7 @@
 //
 
 #import "DSInputTextView.h"
+#import "UIView+DSCategory.h"
 
 @interface DSInputTextView ()
 
@@ -78,7 +79,7 @@
     //段落样式
     NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
     style.alignment = self.textAlignment;
-    CGRect targetRect = CGRectMake(5, 8 + self.contentInset.top, self.frame.size.width - self.contentInset.left, self.frame.size.height - self.contentInset.top);
+    CGRect targetRect = CGRectMake(5, 8 + self.contentInset.top, self.width - self.contentInset.left, self.height - self.contentInset.top);
     NSAttributedString *attributedString = self.placeholderAttributedText;
     [attributedString drawInRect:targetRect];
 }
