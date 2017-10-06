@@ -17,6 +17,22 @@ typedef NS_ENUM(NSInteger, DSInputToolStatus) {
     
 };
 
+@protocol DSInputToolViewDelegate <NSObject>
+
+@optional
+//将要被编辑
+- (BOOL)textViewShouldBeginEditing;
+//已经开始编辑
+- (void)textViewDidEndEditing;
+//文本将要发生改变
+- (BOOL)shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)replacementText;
+//文本已经发生改变
+- (void)textViewDidChange;
+//toolView将要改变高度
+- (void)toolViewWillChangeHeight:(CGFloat)height;
+//toolView已经改变高度
+- (void)toolViewDidChangeHeight:(CGFloat)height;
+@end
 
 @interface DSInputToolView : UIView
 
@@ -38,5 +54,28 @@ typedef NS_ENUM(NSInteger, DSInputToolStatus) {
 //输入的文字
 @property (nonatomic, copy) NSString *contentText;
 
+//代理
+@property (nonatomic, weak) id<DSInputToolViewDelegate> delegate;
+
+//是否显示键盘
+@property (nonatomic, assign) BOOL showsKeyboard;
+
+//按钮对应key数组
+@property (nonatomic, strong) NSArray<NSNumber *> *inputToolViewItemTypes;
+
+//更新状态
+- (void)update:(DSInputToolStatus)status;
+
+@end
+
+@interface DSInputToolView (inputText)
+//选中范围
+- (NSRange)selectedRange;
+//设置占位文本
+- (void)setPlaceHolder:(NSString *)placeHolder;
+//插入文本
+- (void)insertText:(NSString *)text;
+//删除文本
+- (void)deleteText:(NSRange)range;
 
 @end

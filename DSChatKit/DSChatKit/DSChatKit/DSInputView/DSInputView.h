@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DSInputToolView.h"
 
 @interface DSInputView : UIView
+
+@property (nonatomic, strong) DSInputToolView *toolView;
+
 
 @end

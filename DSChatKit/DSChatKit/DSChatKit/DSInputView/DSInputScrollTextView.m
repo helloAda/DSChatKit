@@ -10,7 +10,7 @@
 #import "DSInputTextView.h"
 #import "UIView+DSCategory.h"
 
-#define FONTSIZE 16
+#define FONTSIZE 14
 
 @interface DSInputScrollTextView () <UITextViewDelegate>
 
@@ -210,8 +210,70 @@
 
 #pragma mark -- UITextViewDelegate
 
-#warning 下次从这里开始
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(shouldChangeTextInRange:replacementText:)]) {
+        return [self.textViewDelegate shouldChangeTextInRange:range replacementText:text];
+    }
+    return YES;
+}
 
+- (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange {
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(shouldInteractWithURL:inRange:)]) {
+        return [self.textViewDelegate shouldInteractWithURL:URL inRange:characterRange];
+    }
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange
+{
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(shouldInteractWithTextAttachment:inRange:)]) {
+        return [self.textViewDelegate shouldInteractWithTextAttachment:textAttachment inRange:characterRange];
+    }
+    return YES;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewDidBeginEditing:)]) {
+        [self.textViewDelegate textViewDidBeginEditing:self];
+    }
+}
+
+- (void)textViewDidChangeSelection:(UITextView *)textView {
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewDidChangeSelection:)]) {
+        [self.textViewDelegate textViewDidChangeSelection:self];
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewDidEndEditing:)]) {
+        [self.textViewDelegate textViewDidEndEditing:self];
+    }
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewShouldBeginEditing:)]) {
+        return [self.textViewDelegate textViewShouldBeginEditing:self];
+    }
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewShouldEndEditing:)]) {
+        return [self.textViewDelegate textViewShouldEndEditing:self];
+    }
+    return YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    if (self.textViewDelegate && [self.textViewDelegate respondsToSelector:@selector(textViewDidChange:)]) {
+        [self.textViewDelegate textViewDidChange:self];
+    }
+    [self fitToScrollView];
+}
 @end
 
 

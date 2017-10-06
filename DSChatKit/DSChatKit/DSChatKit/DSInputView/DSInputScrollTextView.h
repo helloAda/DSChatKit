@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class DSInputScrollTextView;
 
-@protocol DSInputScrollTextViewwDelegate <NSObject>
+@protocol DSInputScrollTextViewDelegate <NSObject>
 
 @optional
 
@@ -17,7 +17,24 @@
 - (void)willChangeHeight:(CGFloat)height;
 //已经改变高度
 - (void)didChangeHeight:(CGFloat)height;
-
+//文本将要发生改变
+- (BOOL)shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)replacementText;
+//是否允许对文本中的URL进行操作
+- (BOOL)shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)range;
+//是否允许对文本中的富文本进行操作
+- (BOOL)shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)range;
+//已经开始编辑
+- (void)textViewDidBeginEditing:(DSInputScrollTextView *)scrollTextView;
+// 焦点发生改变
+- (void)textViewDidChangeSelection:(DSInputScrollTextView *)scrollTextView;
+//已经结束编辑
+- (void)textViewDidEndEditing:(DSInputScrollTextView *)scrollTextView;
+//将要开始编辑
+- (BOOL)textViewShouldBeginEditing:(DSInputScrollTextView *)scrollTextView;
+//将要结束编辑
+- (BOOL)textViewShouldEndEditing:(DSInputScrollTextView *)scrollTextView;
+// 文本发生改变
+- (void)textViewDidChange:(DSInputScrollTextView *)scrollTextView;
 @end
 
 @interface DSInputScrollTextView : UIScrollView
