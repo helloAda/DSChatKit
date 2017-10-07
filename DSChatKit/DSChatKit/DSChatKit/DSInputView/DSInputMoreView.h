@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DSSessionConfig.h"
 
 @interface DSInputMoreView : UIView
+
+//配置信息
+@property (nonatomic, weak) id<DSSessionConfig> config;
 
 @end

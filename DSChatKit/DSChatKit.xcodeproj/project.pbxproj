@@ -13,6 +13,7 @@
 		7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6221F87888500D69DAA /* DSInputMoreView.m */; };
 		7791C6271F87899100D69DAA /* DSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6261F87899100D69DAA /* DSPageView.m */; };
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
+		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
 		77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */; };
 		77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67E1F7D2EE700154EF9 /* ViewController.m */; };
 		77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E0B6801F7D2EE700154EF9 /* Main.storyboard */; };
@@ -69,6 +70,9 @@
 		7795AC3D1F7F2EA80034CD3C /* UIView+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DSCategory.h"; sourceTree = "<group>"; };
 		7795AC3E1F7F38490034CD3C /* DSInputScrollTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputScrollTextView.h; sourceTree = "<group>"; };
 		7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputScrollTextView.m; sourceTree = "<group>"; };
+		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
+		77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMediaItem.m; sourceTree = "<group>"; };
+		77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfig.h; sourceTree = "<group>"; };
 		77E0B6771F7D2EE700154EF9 /* DSChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E0B67A1F7D2EE700154EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -159,6 +163,23 @@
 			path = DSCategory;
 			sourceTree = "<group>";
 		};
+		77A3C2FA1F88C78300F2DA07 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */,
+				77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77A3C2FE1F88CBAA00F2DA07 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		77E0B66E1F7D2EE700154EF9 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +242,8 @@
 				7795AC3B1F7F2E960034CD3C /* DSCategory */,
 				77E0B6AD1F7D2F0C00154EF9 /* DSInputView */,
 				7791C6241F87892300D69DAA /* Common */,
+				77A3C2FA1F88C78300F2DA07 /* Model */,
+				77A3C2FE1F88CBAA00F2DA07 /* Protocols */,
 			);
 			path = DSChatKit;
 			sourceTree = "<group>";
@@ -375,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */,
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */,
