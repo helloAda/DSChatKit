@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DSInputToolView.h"
+#import "DSInputMoreView.h"
 
 @interface DSInputView : UIView
 
 @property (nonatomic, strong) DSInputToolView *toolView;
+@property (nonatomic, strong) DSInputMoreView *moreView;
 
 
 @end

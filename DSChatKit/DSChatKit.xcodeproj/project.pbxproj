@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
+		778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785800F1F8E110F005187B5 /* DSInputEmojiView.m */; };
+		778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */; };
+		778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580181F8E1E36005187B5 /* DSInputEmojiManager.m */; };
+		7785801B1F8E244A005187B5 /* DSInputEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */; };
 		7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B6AF1F7D2F0C00154EF9 /* DSInputToolView.m */; };
 		7791C6201F87561400D69DAA /* DSInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B6B11F7D2F0C00154EF9 /* DSInputView.m */; };
 		7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6221F87888500D69DAA /* DSInputMoreView.m */; };
@@ -44,6 +48,13 @@
 /* Begin PBXFileReference section */
 		775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
 		775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
+		7785800E1F8E110F005187B5 /* DSInputEmojiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiView.h; sourceTree = "<group>"; };
+		7785800F1F8E110F005187B5 /* DSInputEmojiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiView.m; sourceTree = "<group>"; };
+		778580111F8E146B005187B5 /* DSInputEmojiBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiBottomView.h; sourceTree = "<group>"; };
+		778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiBottomView.m; sourceTree = "<group>"; };
+		778580171F8E1E36005187B5 /* DSInputEmojiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiManager.h; sourceTree = "<group>"; };
+		778580181F8E1E36005187B5 /* DSInputEmojiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiManager.m; sourceTree = "<group>"; };
+		7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DSInputEmoji.bundle; sourceTree = "<group>"; };
 		7791C60A1F8724B500D69DAA /* input_keyboard_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_highlight@3x.png"; sourceTree = "<group>"; };
 		7791C60B1F8724B500D69DAA /* input_keyboard_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_normal@3x.png"; sourceTree = "<group>"; };
 		7791C60C1F8724B500D69DAA /* input_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_normal@2x.png"; sourceTree = "<group>"; };
@@ -141,6 +152,7 @@
 				7791C6161F8724D100D69DAA /* input_voice_normal@2x.png */,
 				7791C61C1F872E1D00D69DAA /* input_text_bg@2x.png */,
 				7791C61D1F872E2000D69DAA /* input_text_bg@3x.png */,
+				7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -261,6 +273,12 @@
 				7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */,
 				7791C6211F87888500D69DAA /* DSInputMoreView.h */,
 				7791C6221F87888500D69DAA /* DSInputMoreView.m */,
+				7785800E1F8E110F005187B5 /* DSInputEmojiView.h */,
+				7785800F1F8E110F005187B5 /* DSInputEmojiView.m */,
+				778580111F8E146B005187B5 /* DSInputEmojiBottomView.h */,
+				778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */,
+				778580171F8E1E36005187B5 /* DSInputEmojiManager.h */,
+				778580181F8E1E36005187B5 /* DSInputEmojiManager.m */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -373,6 +391,7 @@
 			files = (
 				77E0B6871F7D2EE700154EF9 /* LaunchScreen.storyboard in Resources */,
 				77E0B6841F7D2EE700154EF9 /* Assets.xcassets in Resources */,
+				7785801B1F8E244A005187B5 /* DSInputEmoji.bundle in Resources */,
 				77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,10 +418,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */,
+				778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */,
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
+				778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */,
 				7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
+				778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
 				7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */,

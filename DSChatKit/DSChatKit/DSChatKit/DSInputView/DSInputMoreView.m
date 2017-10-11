@@ -15,6 +15,8 @@
 #define MaxItemCountInPage 8 //每页最多8个
 #define PageRowCount 2       //分2行
 #define PageColumnCount 4    //每行4个
+#define ButtonItemWidth 60   //按钮宽度
+#define ButtonItemHeight 80  //按钮高度
 
 @interface DSInputMoreView ()<DSPageViewDataSource,DSPageViewDelegate>
 {
@@ -59,7 +61,7 @@
         [btn setImage:item.selectedImage forState:UIControlStateHighlighted];
         [btn setTitle:item.title forState:UIControlStateNormal];
         [btn setTintColor:[UIColor lightTextColor]];
-        [btn setTitleEdgeInsets:UIEdgeInsetsMake(76, -75, 0, 0)];
+        [btn setTitleEdgeInsets:UIEdgeInsetsMake(61, -60, 0, 0)];
         [btn.titleLabel setFont:[UIFont systemFontOfSize:TitleFontSize]];
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [mediaButtons addObject:btn];
@@ -104,8 +106,34 @@
 
 - (UIView *)mediaPageView:(DSPageView *)pageView beginItem:(NSInteger)begin endItem:(NSInteger)end {
     UIView *subView = [[UIView alloc] init];
-    NSInteger spacing = self.width - PageColumnCount *
+    //间距
+    NSInteger spacing = (self.width - PageColumnCount * ButtonItemWidth) / (PageColumnCount + 1);
+    NSInteger coloumnIndex = 0; //第几列
+    NSInteger rowIndex = 0;     //第几行
+    NSInteger indexPage = 0;    //第几个
+    
+    for (NSInteger index = begin ; index < end; index ++) {
+        UIButton *button = [_mediaButtons objectAtIndex:index];
+        [button addTarget:self action:@selector(onTouchButton:) forControlEvents:UIControlEventTouchUpInside];
+        
+        rowIndex = indexPage / PageColumnCount;
+        coloumnIndex = indexPage % PageColumnCount;
+        CGFloat x = spacing + (ButtonItemWidth + spacing) * coloumnIndex;
+        CGFloat y = 0.0;
+        if (rowIndex > 0) {
+            y = rowIndex * (ButtonItemHeight + 10) + 10;
+        }
+        else {
+            y = 10;
+        }
+        button.frame = CGRectMake(x, y, ButtonItemWidth, ButtonItemHeight);
+        [subView addSubview:button];
+        indexPage++;
+    }
+    return subView;
 }
 
-
+- (void)onTouchButton:(UIButton *)button {
+    
+}
 @end
