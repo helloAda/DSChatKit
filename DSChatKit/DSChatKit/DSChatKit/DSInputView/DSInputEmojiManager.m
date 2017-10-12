@@ -7,13 +7,57 @@
 //
 
 #import "DSInputEmojiManager.h"
+#import "DSChatKit.h"
 
-#define EmojiBundleName @"DSInputEmoji.bundle" //资源所在bundle
-#define EmojiPath       @"Emoji"               //在bundle中的文件夹名称
+#define EmojiRow 3
+#define EmojiMargin 15
+#define EmojiImageWidth 40
+#define EmojiImageHeight 40
+#define EmojiHeight 43
+
+//表情包
+#define EmoticonRow 2
+#define EmoticonImageWidth 70
+#define EmoticonImageHeight 70
+#define EmoticonHeight 76
+
+@implementation DSInputEmojiLayout
+
+- (instancetype)initEmojiLayout:(CGFloat)width {
+    self = [super init];
+    if (self) {
+        _rows = EmojiRow;
+        _columes = (width - EmojiMargin * 2) / EmojiImageWidth;
+        _itemCountInPage = _rows * _columes - 1; //减一个删除键
+        _emojiWidth = (width - EmojiMargin * 2) / _columes;
+        _emojiHeight = EmojiHeight;
+        _imageWidth = EmojiImageWidth;
+        _imageHeight = EmojiImageHeight;
+        _emoji = YES;
+    }
+    return self;
+}
+
+- (instancetype)initEmoticonLayout:(CGFloat)width {
+    self = [super init];
+    if (self) {
+        _rows = EmoticonRow;
+        _columes = (width - EmojiMargin * 2) / EmoticonImageWidth;
+        _itemCountInPage = _rows * _columes;
+        _emojiWidth = (width - EmojiMargin * 2) / _columes;
+        _emojiHeight = EmoticonHeight;
+        _emojiWidth = EmoticonImageWidth;
+        _emojiHeight = EmoticonImageHeight;
+        _emoji = NO;
+    }
+    return self;
+}
+@end
 
 @interface DSInputEmojiManager ()
 
-@property (nonatomic,strong)    NSArray *catalogs;
+@property (nonatomic,strong) NSArray *catalogs;
+
 @end
 
 @implementation DSInputEmojiManager
@@ -40,7 +84,7 @@
 - (void)parsePlist {
     
     NSMutableArray *catalogs = [NSMutableArray array];
-    NSURL *url = [[NSBundle mainBundle] URLForResource:EmojiBundleName withExtension:nil];
+    NSURL *url = [[NSBundle mainBundle] URLForResource:[DSChatKit shareKit].emojiBundleName withExtension:nil];
     NSBundle *bundle = [NSBundle bundleWithURL:url];
     NSString *filePath = [bundle pathForResource:@"emoji" ofType:@"plist" inDirectory:EmojiPath];
     if (filePath) {
@@ -49,16 +93,16 @@
             NSArray *emojis = dic[@"data"];
             NSDictionary *info = dic[@"info"];
             
-            DSInputEmojiCatalogs *catalog = [self catalogByInfo:info emojis:emojis];
+            DSInputEmojiCatalog *catalog = [self catalogByInfo:info emojis:emojis];
             [catalogs addObject:catalog];
         }
     }
     _catalogs = catalogs;
 }
 
-//将文件中的表情数据字典 转为DSInputEmojiCatalogs类型
-- (DSInputEmojiCatalogs *)catalogByInfo:(NSDictionary *)info emojis:(NSArray *)emojis {
-    DSInputEmojiCatalogs *catalogs = [[DSInputEmojiCatalogs alloc] init];
+//将文件中的表情数据字典 转为DSInputEmojiCatalog类型
+- (DSInputEmojiCatalog *)catalogByInfo:(NSDictionary *)info emojis:(NSArray *)emojis {
+    DSInputEmojiCatalog *catalogs = [[DSInputEmojiCatalog alloc] init];
     catalogs.catalogID = info[@"id"];
     catalogs.title     = info[@"title"];
     NSString *prefix = EmojiPath;
@@ -88,4 +132,15 @@
     catalogs.tagEmoji = tagEmojiDic;
     return catalogs;
 }
+
+
+- (DSInputEmojiCatalog *)emojiCatalog:(NSString *)catalogID {
+    for (DSInputEmojiCatalog *catalog in _catalogs) {
+        if ([catalog.catalogID isEqualToString:catalogID]) {
+            return catalog;
+        }
+    }
+    return nil;
+}
+
 @end
