@@ -9,17 +9,6 @@
 #import "DSInputEmojiManager.h"
 #import "DSChatKit.h"
 
-#define EmojiRow 3
-#define EmojiMargin 15
-#define EmojiImageWidth 40
-#define EmojiImageHeight 40
-#define EmojiHeight 43
-
-//表情包
-#define EmoticonRow 2
-#define EmoticonImageWidth 70
-#define EmoticonImageHeight 70
-#define EmoticonHeight 76
 
 @implementation DSInputEmojiLayout
 

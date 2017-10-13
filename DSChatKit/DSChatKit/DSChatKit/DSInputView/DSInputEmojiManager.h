@@ -12,6 +12,19 @@
 #define EmojiPath       @"Emoji"    //在bundle中的文件夹名称
 #define EmojiCatalog    @"default"  //emoji表情目录ID所对应的Key
 
+#define EmojiRow 3
+#define EmojiMargin 15
+#define EmojiMarginTop 15
+#define EmojiImageWidth 40
+#define EmojiImageHeight 40
+#define EmojiHeight 43
+
+//表情包
+#define EmoticonRow 2
+#define EmoticonImageWidth 70
+#define EmoticonImageHeight 70
+#define EmoticonHeight 76
+
 //表情布局
 @interface DSInputEmojiLayout : NSObject
 //行数
@@ -24,9 +37,9 @@
 @property (nonatomic, assign) CGFloat emojiWidth;
 //每个表情高度
 @property (nonatomic, assign) CGFloat emojiHeight;
-//显示图片的宽
+//图片的宽
 @property (nonatomic, assign) CGFloat imageWidth;
-//显示图片的高
+//图片的高
 @property (nonatomic, assign) CGFloat imageHeight;
 //是否emoji图片
 @property (nonatomic, assign) BOOL emoji;

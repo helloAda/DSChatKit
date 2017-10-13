@@ -95,9 +95,19 @@ const CGFloat separatedLineWidth = .5f; //分隔线宽度
 }
 
 - (void)selectIndex:(NSInteger)index {
-    for (NSInteger i = 0; i < self.catalogs.count; i ++) {
-        UIButton *btn = self.catalogs[i];
+    UIButton *btn;
+    for (NSInteger i = 0; i < self.catalogs.count; i++) {
+        btn = self.catalogs[i];
         btn.selected = i == index;
+    }
+    //btn没有在可见区域要滚动
+    //右边
+    if (btn.left == (_catalogsView.contentOffset.x + _catalogsView.width)) {
+        [_catalogsView scrollRectToVisible:CGRectMake(_catalogsView.contentOffset.x + btn.width, 0, _catalogsView.width, _catalogsView.height) animated:YES];
+    }
+    //左边
+    if (btn.right == _catalogsView.contentOffset.x) {
+        [_catalogsView scrollRectToVisible:CGRectMake(_catalogsView.contentOffset.x - btn.width, 0, _catalogsView.width, _catalogsView.height) animated:YES];
     }
 }
 

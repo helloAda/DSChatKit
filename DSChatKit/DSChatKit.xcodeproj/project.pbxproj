@@ -10,6 +10,8 @@
 		774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 774263481F8EF988002BDA84 /* UIImage+DSCategory.m */; };
 		7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742634B1F8EFDDE002BDA84 /* DSChatKit.m */; };
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
+		777792811F90567900752427 /* DSInputEmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 777792801F90567900752427 /* DSInputEmojiButton.m */; };
+		777792841F90DE6500752427 /* DSInputAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 777792831F90DE6500752427 /* DSInputAudioRecordView.m */; };
 		778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785800F1F8E110F005187B5 /* DSInputEmojiView.m */; };
 		778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */; };
 		778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580181F8E1E36005187B5 /* DSInputEmojiManager.m */; };
@@ -54,6 +56,10 @@
 		7742634B1F8EFDDE002BDA84 /* DSChatKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKit.m; sourceTree = "<group>"; };
 		775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
 		775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
+		7777927F1F90567900752427 /* DSInputEmojiButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiButton.h; sourceTree = "<group>"; };
+		777792801F90567900752427 /* DSInputEmojiButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiButton.m; sourceTree = "<group>"; };
+		777792821F90DE6500752427 /* DSInputAudioRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputAudioRecordView.h; sourceTree = "<group>"; };
+		777792831F90DE6500752427 /* DSInputAudioRecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputAudioRecordView.m; sourceTree = "<group>"; };
 		7785800E1F8E110F005187B5 /* DSInputEmojiView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiView.h; sourceTree = "<group>"; };
 		7785800F1F8E110F005187B5 /* DSInputEmojiView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiView.m; sourceTree = "<group>"; };
 		778580111F8E146B005187B5 /* DSInputEmojiBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiBottomView.h; sourceTree = "<group>"; };
@@ -289,6 +295,10 @@
 				778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */,
 				778580171F8E1E36005187B5 /* DSInputEmojiManager.h */,
 				778580181F8E1E36005187B5 /* DSInputEmojiManager.m */,
+				7777927F1F90567900752427 /* DSInputEmojiButton.h */,
+				777792801F90567900752427 /* DSInputEmojiButton.m */,
+				777792821F90DE6500752427 /* DSInputAudioRecordView.h */,
+				777792831F90DE6500752427 /* DSInputAudioRecordView.m */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -433,12 +443,14 @@
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */,
 				7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */,
+				777792811F90567900752427 /* DSInputEmojiButton.m in Sources */,
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
 				778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
 				7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */,
+				777792841F90DE6500752427 /* DSInputAudioRecordView.m in Sources */,
 				775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */,
 				7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */,
 				7791C6271F87899100D69DAA /* DSPageView.m in Sources */,
