@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+//按钮类型  --  类似微信键盘，在朋友圈之需要表情按钮
+typedef NS_ENUM(NSInteger, DSInputToolViewItemType){
+    DSInputToolViewItemTypeVoice,         //声音
+    DSInputToolViewItemTypeText,          //文本
+    DSInputToolViewItemTypeEmoji,         //表情
+    DSInputToolViewItemTypeMore,          //更多
+};
+
+//选中状态
 typedef NS_ENUM(NSInteger, DSInputToolStatus) {
     
     DSInputToolStatusText,      // - 文字

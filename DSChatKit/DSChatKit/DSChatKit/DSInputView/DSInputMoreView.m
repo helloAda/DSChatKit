@@ -133,7 +133,13 @@
     return subView;
 }
 
+#pragma mark --- button action
 - (void)onTouchButton:(UIButton *)button {
-    
+    NSInteger index = button.tag;
+    DSMediaItem *item = _mediaItems[index];
+    if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(didTapMediaItem:)]) {
+        BOOL handled = [self.actionDelegate didTapMediaItem:item];
+        if (!handled) NSAssert(0,@"无效的按钮响应方法");
+    }
 }
 @end

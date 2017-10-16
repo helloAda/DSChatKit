@@ -19,4 +19,6 @@
 //多添加的表情包
 - (NSArray <DSInputEmojiCatalog *> *)emoticons;
 
+//按钮类型 DSInputToolViewItemType 按顺序排列
+- (NSArray <NSNumber *> *)inputToolViewItemTypes;
 @end

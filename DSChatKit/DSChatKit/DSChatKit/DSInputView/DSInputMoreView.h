@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "DSSessionConfig.h"
+#import "DSInputView.h"
 
 @interface DSInputMoreView : UIView
 
 //配置信息
 @property (nonatomic, weak) id<DSSessionConfig> config;
+//按钮点击代理
+@property (nonatomic, weak) id<DSInputActionDelegate> actionDelegate;
 
 @end

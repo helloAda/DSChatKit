@@ -14,12 +14,7 @@
 #define BtnPadding 6 //按钮间隔
 #define TextViewPadding 3 //文本框间隔
 
-typedef NS_ENUM(NSInteger, DSInputToolViewItemType){
-    DSInputToolViewItemTypeVoice,         //声音
-    DSInputToolViewItemTypeText,          //文本
-    DSInputToolViewItemTypeEmoji,         //表情
-    DSInputToolViewItemTypeMore,          //更多
-};
+
 
 @interface DSInputToolView ()<DSInputScrollTextViewDelegate>
 
@@ -67,6 +62,8 @@ typedef NS_ENUM(NSInteger, DSInputToolViewItemType){
     [_recordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
     [_recordBtn setBackgroundImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,80,15,80) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
     _recordBtn.exclusiveTouch = YES;
+    [_recordBtn setTitle:@"按住说话" forState:UIControlStateNormal];
+    _recordBtn.hidden = YES;
     [_recordBtn sizeToFit];
     
     
