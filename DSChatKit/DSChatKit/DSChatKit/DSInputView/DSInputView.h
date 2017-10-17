@@ -10,12 +10,23 @@
 #import "DSInputToolView.h"
 #import "DSInputMoreView.h"
 #import "DSInputEmojiView.h"
+#import "DSInputAtCache.h"
 
 @protocol DSInputActionDelegate <NSObject>
 @optional
 
 //更多中 按钮的点击事件
 - (BOOL)didTapMediaItem:(DSMediaItem *)item;
+
+//开始录音
+- (void)startRecording;
+//停止录音
+- (void)stopRecording;
+//取消录音
+- (void)cancelRecording;
+
+//发送text及@的人
+- (void)sendText:(NSString *)text atUsers:(NSArray *)atUsers;
 
 @end
 
@@ -28,6 +39,7 @@
 - (void)hideInputView;
 //改变高度 是否显示inputView
 - (void)inputViewSizeToHeight:(CGFloat)height showInputView:(BOOL)show;
+
 @end
 
 @interface DSInputView : UIView
@@ -44,6 +56,8 @@
 @property (nonatomic, copy) NSString *placeholder;
 //最多字数限制 1000
 @property (nonatomic, assign) NSInteger maxTextLength;
+//@功能
+@property (nonatomic, strong) DSInputAtCache *atCache;
 
 /**
  初始化
@@ -63,4 +77,6 @@
 - (void)reset;
 //刷新当前键盘状态
 - (void)refreshStatus:(DSInputToolStatus)status;
+//更新语音时间
+- (void)updateAudioRecordTime:(NSTimeInterval)time;
 @end

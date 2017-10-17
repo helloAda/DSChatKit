@@ -10,6 +10,7 @@
 		774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 774263481F8EF988002BDA84 /* UIImage+DSCategory.m */; };
 		7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742634B1F8EFDDE002BDA84 /* DSChatKit.m */; };
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
+		7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */; };
 		777792811F90567900752427 /* DSInputEmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 777792801F90567900752427 /* DSInputEmojiButton.m */; };
 		777792841F90DE6500752427 /* DSInputAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 777792831F90DE6500752427 /* DSInputAudioRecordView.m */; };
 		778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785800F1F8E110F005187B5 /* DSInputEmojiView.m */; };
@@ -56,6 +57,8 @@
 		7742634B1F8EFDDE002BDA84 /* DSChatKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKit.m; sourceTree = "<group>"; };
 		775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
 		775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
+		7763DF6D1F95E12F00E29431 /* DSInputAtCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputAtCache.h; sourceTree = "<group>"; };
+		7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputAtCache.m; sourceTree = "<group>"; };
 		7777927F1F90567900752427 /* DSInputEmojiButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiButton.h; sourceTree = "<group>"; };
 		777792801F90567900752427 /* DSInputEmojiButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiButton.m; sourceTree = "<group>"; };
 		777792821F90DE6500752427 /* DSInputAudioRecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputAudioRecordView.h; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				777792801F90567900752427 /* DSInputEmojiButton.m */,
 				777792821F90DE6500752427 /* DSInputAudioRecordView.h */,
 				777792831F90DE6500752427 /* DSInputAudioRecordView.m */,
+				7763DF6D1F95E12F00E29431 /* DSInputAtCache.h */,
+				7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */,
 				778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */,
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
+				7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */,
 				7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */,

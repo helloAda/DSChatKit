@@ -9,6 +9,8 @@
 #import "DSInputView.h"
 #import "DSInputAudioRecordView.h"
 #import "UIView+DSCategory.h"
+#import <AVFoundation/AVFoundation.h>
+#import "DSInputEmojiManager.h"
 
 @interface DSInputView ()<DSInputToolViewDelegate,DSInputEmojiViewDelegate>
 
@@ -61,6 +63,9 @@
     _emojiView.delegate = nil;
 }
 
+- (void)didMoveToWindow {
+    [self toolView];
+}
 - (CGSize)sizeThatFits:(CGSize)size {
     
     CGFloat toolViewHeight = _toolView.height;
@@ -71,6 +76,22 @@
     return CGSizeMake(width, height);
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    _moreView.top = self.toolView.bottom;
+    _emojiView.top = self.toolView.bottom;
+}
+
+
+//改变高度
+- (void)didChangeHeight {
+    if (self.inputDelegate && [self.inputDelegate respondsToSelector:@selector(inputViewSizeToHeight:showInputView:)]) {
+        CGFloat bottomPadding = self.superview.height - self.top;
+        CGPoint point = [self convertPoint:CGPointMake(0, self.toolView.bottom) toView:self.superview];
+        BOOL showInputView = point.y != self.superview.height;
+        [self.inputDelegate inputViewSizeToHeight:bottomPadding showInputView:showInputView];
+    }
+}
 #pragma mark --- 外部调用----
 
 //刷新当前键盘状态
@@ -108,6 +129,10 @@
     [self didChangeHeight];
 }
 
+- (void)updateAudioRecordTime:(NSTimeInterval)time {
+    self.audioRecordView.recordTime = time;
+}
+
 #pragma mark ---- UIKeyboardNotification
 
 - (void)keyboardWillChangeFrame:(NSNotification *)notification {
@@ -135,20 +160,258 @@
     [self didChangeHeight];
 }
 
-//改变高度
-- (void)didChangeHeight {
-    if (self.inputDelegate && [self.inputDelegate respondsToSelector:@selector(inputViewSizeToHeight:showInputView:)]) {
-        CGFloat bottomPadding = self.superview.height - self.top;
-        CGPoint point = [self convertPoint:CGPointMake(0, self.toolView.bottom) toView:self.superview];
-        BOOL showInputView = point.y != self.superview.height;
-        [self.inputDelegate inputViewSizeToHeight:bottomPadding showInputView:showInputView];
+
+#pragma mark --- button actions
+//声音按钮
+- (void)onTapVoiceBtn:(UIButton *)btn {
+    if (self.toolStatus != DSInputToolStatusAudio) {
+        
+        __weak typeof(self) weakSelf = self;
+        if ([[AVAudioSession sharedInstance] respondsToSelector:@selector(requestRecordPermission:)]) {
+            [[AVAudioSession sharedInstance] performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
+                if (granted) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (weakSelf.toolView.showsKeyboard) {
+                            weakSelf.toolStatus = DSInputToolStatusAudio;
+                            weakSelf.toolView.showsKeyboard = NO;
+                        }else{
+                            [weakSelf refreshStatus:DSInputToolStatusAudio];
+                            [weakSelf didChangeHeight];
+                        }
+                    });
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [[[UIAlertView alloc] initWithTitle:nil
+                                                    message:@"没有麦克风权限"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil] show];
+                    });
+                }
+            }];
+        }
+    } else {
+        if ([self.toolView.inputToolViewItemTypes containsObject:@(DSInputToolViewItemTypeVoice)]) {
+            self.toolStatus = DSInputToolStatusText;
+            self.toolView.showsKeyboard = YES;
+        }
+    }
+}
+
+//表情按钮
+- (void)onTapEmojiBtn:(UIButton *)btn {
+    
+    if (self.toolStatus != DSInputToolStatusEmoji) {
+        [self bringSubviewToFront:self.emojiView];
+        self.emojiView.hidden = NO;
+        self.moreView.hidden = YES;
+        if (self.toolView.showsKeyboard) {
+            self.toolStatus = DSInputToolStatusEmoji;
+            self.toolView.showsKeyboard = NO;
+        } else {
+            [self refreshStatus:DSInputToolStatusEmoji];
+            [self didChangeHeight];
+        }
+    }
+    else {
+        self.toolStatus = DSInputToolStatusText;
+        self.toolView.showsKeyboard = YES;
+    }
+}
+
+//更多按钮
+- (void)onTapMoreBtn:(UIButton *)btn {
+    if (self.toolStatus != DSInputToolStatusMore) {
+        [self bringSubviewToFront:self.moreView];
+        self.emojiView.hidden = YES;
+        if (self.toolView.showsKeyboard) {
+            self.toolStatus = DSInputToolStatusMore;
+            self.toolView.showsKeyboard = NO;
+        }
+        else {
+            [self refreshStatus:DSInputToolStatusMore];
+            [self didChangeHeight];
+        }
+    }
+    else {
+        self.toolStatus = DSInputToolStatusText;
+        self.toolView.showsKeyboard = YES;
+    }
+}
+
+//  -------------记录声音事件----------------
+
+- (void)onTapRecordBtnDown:(UIButton *)btn {
+    self.recordStatus = DSInputAudioRecordStart;
+}
+
+- (void)onTapRecordBtnUpInside:(UIButton *)btn {
+    // 在按钮内手指离开，录音完成
+    self.recordStatus = DSInputAudioRecordEnd;
+}
+
+- (void)onTapRecordBtnUpOutside:(UIButton *)btn {
+    // 在按钮外手指离开，录音取消
+    self.recordStatus = DSInputAudioRecordEnd;
+}
+
+- (void)onTapRecordBtnDragInside:(UIButton *)btn {
+    // 在按钮内手指还没离开， 提示 "手指上滑，取消发送"
+    self.recordStatus = DSInputAudioRecordRecording;
+}
+
+- (void)onTapRecordBtnDragOutside:(UIButton *)btn {
+    // 在按钮外手指离开，提示 "松开手指，取消发送"
+    self.recordStatus = DSInputAudioRecordCancel;
+}
+
+
+#pragma mark -- DSInputToolViewDelegate
+
+//开始编辑
+- (BOOL)textViewShouldBeginEditing {
+    self.toolStatus = DSInputToolStatusText;
+    return YES;
+}
+
+//文本将发生改变
+- (BOOL)shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)replacementText {
+    //回车
+    if ([replacementText isEqualToString:@"\n"]) {
+        [self didSelectedSend:nil];
+        return NO;
+    }
+    //删除字符
+    if ([replacementText isEqualToString:@""] && range.length == 1) {
+        <#statements#>
     }
 }
 
 
+#pragma mark -- DSInputEmojiViewDelegate
 
+//发送
+- (void)didSelectedSend:(UIButton *)btn {
+    if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(sendText:atUsers:)] && self.toolView.contentText.length > 0) {
+        NSString *sendText = self.toolView.contentText;
+        [self.actionDelegate sendText:sendText atUsers:[self.atCache allAtUid:sendText]];
+        [self.atCache clean];
+        self.toolView.contentText = @"";
+        [self.toolView layoutSubviews];
+    }
+}
+
+
+#pragma mark -- private
+
+- (BOOL)endEditing:(BOOL)force {
+    BOOL endEnditing = [super endEditing:force];
+    __weak typeof(self) weakSelf = self;
+    if (!self.toolView.showsKeyboard) {
+        [UIView animateWithDuration:0.25 delay:0.00 options:UIViewAnimationCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState animations:^{
+            [weakSelf refreshStatus:DSInputToolStatusText];
+            if (weakSelf.inputDelegate && [weakSelf.inputDelegate respondsToSelector:@selector(inputViewSizeToHeight:showInputView:)]) {
+                [self.inputDelegate inputViewSizeToHeight:weakSelf.toolView.height showInputView:NO];
+            }
+        } completion:nil];
+    }
+    return endEnditing;
+}
+
+//删除字符
+- (BOOL)deleteText {
+    NSRange range = [self deleteEmojiRange];
+    
+    if (range.length == 1) {
+        //不是表情，再判断@
+        DSInputAtItem *item = [self ]
+    }
+    //不是表情也不是@，自动删除
+    if (range.length == 1) return YES;
+    //是表情或者@
+    [self.toolView deleteText:range];
+    return NO;
+}
+
+- (void)deleteAtRange {
+#warning 这里开始
+}
+
+- (NSRange)deleteEmojiRange {
+    NSString *text = self.toolView.contentText;
+    NSRange range = [self rangeForPrefix:@"[" suffix:@"]"];
+    NSRange selectedRange = [self.toolView selectedRange];
+    //有找到前缀
+    if (range.length > 1) {
+        NSString *name = [text substringWithRange:range];
+        //判断前缀中的内容是否是表情
+        DSInputEmoji *emoji = [[DSInputEmojiManager manager] emojiByTag:name];
+        //是的话，删掉，不是就还是只删一个
+        range = emoji ? range : NSMakeRange(selectedRange.location - 1, 1);
+    }
+    return range;
+}
+
+
+//判断文字中是否包含对应前后缀
+- (NSRange)rangeForPrefix:(NSString *)prefix suffix:(NSString *)suffix {
+    NSString *text = self.toolView.contentText;
+    NSRange range = [self.toolView selectedRange];
+    NSString *selectedText = range.length ? [text substringWithRange:range] : text;
+    NSInteger endLocation = range.location;
+    //如果在最开始就不用在往前匹配了
+    if (endLocation <= 0) {
+        return NSMakeRange(NSNotFound, 0);
+    }
+    NSInteger index = -1;
+    //判断选择删掉的文字中是否包含有后缀
+    if ([selectedText hasSuffix:suffix]) {
+        //往前搜20个字符，判断前缀
+        NSInteger p = 20;
+        for (NSInteger i = endLocation; i >= endLocation - p && i - 1 >= 0; i--) {
+            NSRange subRange = NSMakeRange(i - 1, 1);
+            NSString *subString = [text substringWithRange:subRange];
+            if ([subString compare:prefix] == NSOrderedSame) {
+                index = i - 1;
+                break;
+            }
+        }
+    }
+    //如果匹配到前缀，则删除该后缀到前缀中的所有内容 例如[xxxx] 否则只删除一个字符
+    return index == -1 ? NSMakeRange(endLocation - 1, 1) : NSMakeRange(index, endLocation - index);
+}
 
 #pragma mark -- set
+
+//当前录音状态
+- (void)setRecordStatus:(DSInputAudioRecordState)recordStatus {
+    //上一次状态
+    DSInputAudioRecordState lastStatus = _recordStatus;
+    _recordStatus = recordStatus;
+    self.audioRecordView.status = _recordStatus;
+    if (lastStatus == DSInputAudioRecordEnd) {
+        if (_recordStatus == DSInputAudioRecordStart) {
+            if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(startRecording)]) {
+                [self.actionDelegate startRecording];
+            }
+        }
+    }
+    else if (lastStatus == DSInputAudioRecordStart || lastStatus == DSInputAudioRecordRecording) {
+        if (_recordStatus == DSInputAudioRecordEnd) {
+            if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(stopRecording)]) {
+                [self.actionDelegate stopRecording];
+            }
+        }
+    }
+    else if (lastStatus == DSInputAudioRecordCancel) {
+        if (_recordStatus == DSInputAudioRecordEnd) {
+            if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(cancelRecording)]) {
+                [self.actionDelegate cancelRecording];
+            }
+        }
+    }
+}
 
 - (void)setFrame:(CGRect)frame {
     [super setFrame:frame];
@@ -167,6 +430,18 @@
 - (void)setActionDelegate:(id<DSInputActionDelegate>)actionDelegate {
     self.actionDelegate = actionDelegate;
     self.moreView.actionDelegate = self.actionDelegate;
+}
+
+- (void)setRecording:(BOOL)recording {
+    if (recording) {
+        self.audioRecordView.center = self.superview.center;
+        [self.superview addSubview:self.audioRecordView];
+        self.recordStatus = DSInputAudioRecordRecording;
+    } else {
+        [self.audioRecordView removeFromSuperview];
+        self.recordStatus = DSInputAudioRecordEnd;
+    }
+    _recording = recording;
 }
 
 #pragma mark -- get
@@ -188,6 +463,14 @@
             [_toolView setInputToolViewItemTypes:[self.inputConfig inputToolViewItemTypes]];
         }
         _toolView.delegate = self;
+        [_toolView.voiceBtn addTarget:self action:@selector(onTapVoiceBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_toolView.emojiBtn addTarget:self action:@selector(onTapEmojiBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_toolView.moreBtn addTarget:self action:@selector(onTapMoreBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_toolView.recordBtn addTarget:self action:@selector(onTapRecordBtnDown:) forControlEvents:UIControlEventTouchDown];
+        [_toolView.recordBtn addTarget:self action:@selector(onTapRecordBtnDragInside:) forControlEvents:UIControlEventTouchDragInside];
+        [_toolView.recordBtn addTarget:self action:@selector(onTapRecordBtnDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+        [_toolView.recordBtn addTarget:self action:@selector(onTapRecordBtnUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_toolView.recordBtn addTarget:self action:@selector(onTapRecordBtnUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
         _toolView.size = [_toolView sizeThatFits:CGSizeMake(self.width, CGFLOAT_MAX)];
         _toolView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         

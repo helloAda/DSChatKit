@@ -132,4 +132,15 @@
     return nil;
 }
 
+- (DSInputEmoji *)emojiByTag:(NSString *)tag {
+    DSInputEmoji *emoji = nil;
+    if (tag.length) {
+        for (DSInputEmojiCatalog *catalog in _catalogs) {
+            emoji = [catalog.tagEmoji objectForKey:tag];
+            if (emoji) break;
+        }
+    }
+    return emoji;
+}
+
 @end

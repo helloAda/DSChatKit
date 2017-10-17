@@ -93,7 +93,7 @@
 
 //通过这组表情对应的目录id找到表情数据
 - (DSInputEmojiCatalog *)emojiCatalog:(NSString *)catalogID;
-
-
+//通过表情的tag找到这个表情数据
+- (DSInputEmoji *)emojiByTag:(NSString *)tag;
 
 @end
