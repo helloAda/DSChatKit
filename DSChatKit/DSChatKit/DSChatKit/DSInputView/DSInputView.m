@@ -284,12 +284,43 @@
     }
     //删除字符
     if ([replacementText isEqualToString:@""] && range.length == 1) {
-        <#statements#>
+        return [self deleteText];
+    }
+    //输入@
+    if ([replacementText isEqualToString:DSInputAtStartChar]) {
+        if (self.inputDelegate && [self.inputDelegate respondsToSelector:@selector(inputAtshowSelectView)]) {
+            [self.inputDelegate inputAtshowSelectView];
+        }
+    }
+    //输入其它字符
+    NSString *str = [self.toolView.contentText stringByAppendingString:replacementText];
+    if (str.length > self.maxTextLength) {
+        return NO;
+    }
+    return YES;
+}
+
+//文本已经发生改变
+- (void)textViewDidChange {
+    if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(textChange:)]) {
+        [self.actionDelegate textChange:self];
     }
 }
 
+- (void)toolViewDidChangeHeight:(CGFloat)height {
+    [self sizeToFit];
+    [self refreshStatus:self.toolStatus];
+    [self didChangeHeight];
+}
 
 #pragma mark -- DSInputEmojiViewDelegate
+
+//添加
+- (void)didSelectedAdd:(UIButton *)btn {
+    if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(selectAddBtn:)]) {
+        [self.actionDelegate selectAddBtn:btn];
+    }
+}
 
 //发送
 - (void)didSelectedSend:(UIButton *)btn {
@@ -299,6 +330,23 @@
         [self.atCache clean];
         self.toolView.contentText = @"";
         [self.toolView layoutSubviews];
+    }
+}
+
+//选择表情
+- (void)selectEmoji:(NSString *)emojiID catalog:(NSString *)catalogID description:(NSString *)description {
+    //删除键
+    if (!catalogID) {
+        [self deleteText];
+    }else {
+        //如果是表情加入文本框
+        if ([catalogID isEqualToString:EmojiCatalog]) {
+            [self.toolView insertText:description];
+        }else {
+            if (self.actionDelegate && [self.actionDelegate respondsToSelector:@selector(selectEmoji:catalog:description:)]) {
+                [self.actionDelegate selectEmoticon:emojiID catalog:catalogID];
+            }
+        }
     }
 }
 
@@ -325,7 +373,10 @@
     
     if (range.length == 1) {
         //不是表情，再判断@
-        DSInputAtItem *item = [self ]
+        DSInputAtItem *item = [self deleteAtRange];
+        if (item) {
+            range = item.range;
+        }
     }
     //不是表情也不是@，自动删除
     if (range.length == 1) return YES;
@@ -334,10 +385,25 @@
     return NO;
 }
 
-- (void)deleteAtRange {
-#warning 这里开始
+//是否有需要删除@
+- (DSInputAtItem *)deleteAtRange {
+    NSString *text = self.toolView.contentText;
+    NSRange range = [self rangeForPrefix:DSInputAtStartChar suffix:DSInputAtEndChar];
+    NSRange selectedRange = [self.toolView selectedRange];
+    DSInputAtItem *item;
+    if (range.length > 1) {
+        NSString *name = [text substringWithRange:range];
+        NSString *set = [DSInputAtEndChar stringByAppendingString:DSInputAtEndChar];
+        //去除字符串两端的特殊符号
+        name = [name stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:set]];
+        item = [self.atCache item:name];
+        range = item ? range : NSMakeRange(selectedRange.location - 1, 1);
+    }
+    item.range = range;
+    return item;
 }
 
+//是否有需要删除表情
 - (NSRange)deleteEmojiRange {
     NSString *text = self.toolView.contentText;
     NSRange range = [self rangeForPrefix:@"[" suffix:@"]"];

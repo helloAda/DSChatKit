@@ -14,6 +14,7 @@
 
 @protocol DSInputEmojiViewDelegate <NSObject>
 
+@optional
 //点击发送按钮
 - (void)didSelectedSend:(UIButton *)btn;
 //点击添加按钮

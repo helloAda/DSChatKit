@@ -9,8 +9,7 @@
 #import "DSInputAtCache.h"
 
 
-#define DSInputAtStartChar @"@"
-#define DSInputAtEndChar   @"\u2004" // Unicode 空格
+
 
 @interface DSInputAtCache ()
 

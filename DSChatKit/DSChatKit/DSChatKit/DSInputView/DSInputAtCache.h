@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define DSInputAtStartChar @"@"
+#define DSInputAtEndChar   @"\u2004" // Unicode 空格
+
 @interface DSInputAtItem : NSObject
 //名字
 @property (nonatomic, copy) NSString *name;

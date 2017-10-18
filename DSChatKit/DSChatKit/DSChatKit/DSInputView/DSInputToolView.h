@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, DSInputToolStatus) {
 @optional
 //将要被编辑
 - (BOOL)textViewShouldBeginEditing;
-//已经开始编辑
+//已经结束编辑
 - (void)textViewDidEndEditing;
 //文本将要发生改变
 - (BOOL)shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)replacementText;

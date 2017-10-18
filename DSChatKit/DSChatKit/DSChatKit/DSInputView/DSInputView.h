@@ -12,6 +12,8 @@
 #import "DSInputEmojiView.h"
 #import "DSInputAtCache.h"
 
+@class DSInputView;
+
 @protocol DSInputActionDelegate <NSObject>
 @optional
 
@@ -27,6 +29,12 @@
 
 //发送text及@的人
 - (void)sendText:(NSString *)text atUsers:(NSArray *)atUsers;
+//文本发生改变
+- (void)textChange:(DSInputView *)inputView;
+//发送非emoji表情 (表情包)
+- (void)selectEmoticon:(NSString *)emoticonID catalog:(NSString *)catalogID;
+//点击了添加表情按钮
+- (void)selectAddBtn:(UIButton *)btn;
 
 @end
 
@@ -39,6 +47,8 @@
 - (void)hideInputView;
 //改变高度 是否显示inputView
 - (void)inputViewSizeToHeight:(CGFloat)height showInputView:(BOOL)show;
+//输入@需要弹出选择联系人界面
+- (void)inputAtshowSelectView;
 
 @end
 
