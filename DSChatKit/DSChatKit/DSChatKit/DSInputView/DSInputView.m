@@ -12,6 +12,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DSInputEmojiManager.h"
 
+
 @interface DSInputView ()<DSInputToolViewDelegate,DSInputEmojiViewDelegate>
 
 //语音记录的视图
@@ -44,6 +45,7 @@
     if (self) {
         _recording = NO;
         _recordStatus = DSInputAudioRecordEnd;
+        _atCache = [[DSInputAtCache alloc] init];
         _inputConfig = config;
         _defaultcontainerHeight = 216;
         _placeholder = @"输入消息";
@@ -572,3 +574,5 @@
     return _emojiView;
 }
 @end
+
+

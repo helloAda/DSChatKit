@@ -23,6 +23,7 @@
 		7791C6271F87899100D69DAA /* DSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6261F87899100D69DAA /* DSPageView.m */; };
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
+		77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */; };
 		77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */; };
 		77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67E1F7D2EE700154EF9 /* ViewController.m */; };
 		77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E0B6801F7D2EE700154EF9 /* Main.storyboard */; };
@@ -99,6 +100,10 @@
 		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
 		77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMediaItem.m; sourceTree = "<group>"; };
 		77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfig.h; sourceTree = "<group>"; };
+		77A49BA21F973B4500F7DD10 /* DSSessionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionViewController.h; sourceTree = "<group>"; };
+		77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionViewController.m; sourceTree = "<group>"; };
+		77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMacro.h; sourceTree = "<group>"; };
+		77A49BA61F974E1300F7DD10 /* DSInputActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputActionDelegate.h; sourceTree = "<group>"; };
 		77E0B6771F7D2EE700154EF9 /* DSChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E0B67A1F7D2EE700154EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -177,6 +182,7 @@
 			children = (
 				7791C6251F87899100D69DAA /* DSPageView.h */,
 				7791C6261F87899100D69DAA /* DSPageView.m */,
+				77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -207,6 +213,15 @@
 				77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		77A49BA11F973B3100F7DD10 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				77A49BA21F973B4500F7DD10 /* DSSessionViewController.h */,
+				77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		77E0B66E1F7D2EE700154EF9 = {
@@ -272,6 +287,7 @@
 				7791C6091F87249F00D69DAA /* Resources */,
 				7795AC3B1F7F2E960034CD3C /* DSCategory */,
 				77E0B6AD1F7D2F0C00154EF9 /* DSInputView */,
+				77A49BA11F973B3100F7DD10 /* Session */,
 				7791C6241F87892300D69DAA /* Common */,
 				77A3C2FA1F88C78300F2DA07 /* Model */,
 				77A3C2FE1F88CBAA00F2DA07 /* Protocols */,
@@ -304,6 +320,7 @@
 				777792831F90DE6500752427 /* DSInputAudioRecordView.m */,
 				7763DF6D1F95E12F00E29431 /* DSInputAtCache.h */,
 				7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */,
+				77A49BA61F974E1300F7DD10 /* DSInputActionDelegate.h */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -452,6 +469,7 @@
 				777792811F90567900752427 /* DSInputEmojiButton.m in Sources */,
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
+				77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */,
 				778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,

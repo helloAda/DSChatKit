@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DSSessionConfig.h"
-#import "DSInputView.h"
+#import "DSInputActionDelegate.h"
 
 @interface DSInputMoreView : UIView
 

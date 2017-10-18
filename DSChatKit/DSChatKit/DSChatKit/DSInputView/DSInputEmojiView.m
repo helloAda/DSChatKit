@@ -290,7 +290,7 @@ const NSInteger EmojiPageControlHeight = 36;
     }
 }
 
-- (void)didSelectedAdd:(UIButton *)btn {
+- (void)didSelectAdd:(UIButton *)btn {
     if (self.delegate && [self.delegate respondsToSelector:@selector(didSelectedAdd:)]) {
         [self.delegate didSelectedAdd:btn];
     }

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "DSSessionViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    DSSessionViewController *vc = [[DSSessionViewController alloc] init];
+    self.window.rootViewController = vc;
     return YES;
 }
 

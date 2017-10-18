@@ -9,6 +9,11 @@
 #import "DSInputEmojiManager.h"
 #import "DSChatKit.h"
 
+@implementation DSInputEmoji
+@end
+
+@implementation DSInputEmojiCatalog
+@end
 
 @implementation DSInputEmojiLayout
 

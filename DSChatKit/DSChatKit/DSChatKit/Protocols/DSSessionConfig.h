@@ -21,4 +21,8 @@
 
 //按钮类型 DSInputToolViewItemType 按顺序排列
 - (NSArray <NSNumber *> *)inputToolViewItemTypes;
+
+//是否需要显示输入框，若有实现 3DTouch 则这里配置成不显示
+- (BOOL)isShowInputView;
+
 @end
