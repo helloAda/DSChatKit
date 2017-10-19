@@ -44,7 +44,7 @@
 }
 
 - (void)setPlaceholderAttributedText:(NSAttributedString *)placeholderAttributedText {
-    self.placeholderAttributedText = placeholderAttributedText;
+    _placeholderAttributedText = placeholderAttributedText;
     [self setNeedsDisplay];
 }
 

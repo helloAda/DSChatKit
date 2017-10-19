@@ -38,7 +38,7 @@
  *
  * Sets frame.size.width = width
  */
-@property (nonatomic) CGFloat width;
+@property (nonatomic, assign) CGFloat width;
 
 /**
  * Shortcut for frame.size.height

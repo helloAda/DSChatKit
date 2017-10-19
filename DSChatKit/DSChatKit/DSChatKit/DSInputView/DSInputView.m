@@ -496,7 +496,7 @@
 }
 
 - (void)setActionDelegate:(id<DSInputActionDelegate>)actionDelegate {
-    self.actionDelegate = actionDelegate;
+    _actionDelegate = actionDelegate;
     self.moreView.actionDelegate = self.actionDelegate;
 }
 

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 //输入控件
 @property (nonatomic, strong) DSInputView *inputView;
+
 ////标题，类似于微信的用户名称
 //@property (nonatomic, strong) UILabel *titleLable;
 ////子标题，类似于QQ的手机在线状态 显示在标题下
@@ -66,7 +67,6 @@
     }
     return YES;
 }
-
 
 
 //使用默认的配置
