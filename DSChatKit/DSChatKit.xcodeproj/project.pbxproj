@@ -24,6 +24,9 @@
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
 		77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */; };
+		77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */; };
+		77C6D6201F9E0AF300C138FB /* DSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */; };
+		77C6D6231F9E0B6E00C138FB /* DSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D6221F9E0B6E00C138FB /* DSMessage.m */; };
 		77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */; };
 		77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67E1F7D2EE700154EF9 /* ViewController.m */; };
 		77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E0B6801F7D2EE700154EF9 /* Main.storyboard */; };
@@ -111,6 +114,13 @@
 		77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionViewController.m; sourceTree = "<group>"; };
 		77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMacro.h; sourceTree = "<group>"; };
 		77A49BA61F974E1300F7DD10 /* DSInputActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputActionDelegate.h; sourceTree = "<group>"; };
+		77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionMsgDataSource.h; sourceTree = "<group>"; };
+		77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionMsgDataSource.m; sourceTree = "<group>"; };
+		77C6D61A1F9E019F00C138FB /* DSChatKitMessageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMessageProvider.h; sourceTree = "<group>"; };
+		77C6D61E1F9E0AF300C138FB /* DSMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageModel.h; sourceTree = "<group>"; };
+		77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessageModel.m; sourceTree = "<group>"; };
+		77C6D6211F9E0B6E00C138FB /* DSMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessage.h; sourceTree = "<group>"; };
+		77C6D6221F9E0B6E00C138FB /* DSMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessage.m; sourceTree = "<group>"; };
 		77E0B6771F7D2EE700154EF9 /* DSChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E0B67A1F7D2EE700154EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -230,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */,
+				77C6D61A1F9E019F00C138FB /* DSChatKitMessageProvider.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -359,6 +370,8 @@
 				77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */,
 				77E51FF71F98C70F00EE0334 /* DSSessionInteractor.h */,
 				77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */,
+				77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */,
+				77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -368,6 +381,10 @@
 			children = (
 				77E51FFB1F98CA6800EE0334 /* DSSession.h */,
 				77E51FFC1F98CA6800EE0334 /* DSSession.m */,
+				77C6D6211F9E0B6E00C138FB /* DSMessage.h */,
+				77C6D6221F9E0B6E00C138FB /* DSMessage.m */,
+				77C6D61E1F9E0AF300C138FB /* DSMessageModel.h */,
+				77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -510,6 +527,7 @@
 				778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */,
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
 				7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */,
+				77C6D6201F9E0AF300C138FB /* DSMessageModel.m in Sources */,
 				77E51FF01F98C4E700EE0334 /* DSSessionTableAdapter.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				77E51FED1F98C06400EE0334 /* DSSessionConnecter.m in Sources */,
@@ -528,7 +546,9 @@
 				77E51FFD1F98CA6800EE0334 /* DSSession.m in Sources */,
 				777792841F90DE6500752427 /* DSInputAudioRecordView.m in Sources */,
 				775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */,
+				77C6D6231F9E0B6E00C138FB /* DSMessage.m in Sources */,
 				7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */,
+				77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */,
 				77E51FF61F98C64F00EE0334 /* DSSessionLayout.m in Sources */,
 				7791C6271F87899100D69DAA /* DSPageView.m in Sources */,
 				77E51FE91F9841D400EE0334 /* UIView+DSCategory.m in Sources */,

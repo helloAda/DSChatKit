@@ -10,10 +10,10 @@
 #import "DSInputView.h"
 #import "DSChatKitMacro.h"
 #import "UIView+DSCategory.h"
+#import "DSSessionConnecter.h"
 
 @interface DSSessionViewController ()<DSInputViewDelegate,DSInputActionDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
 //输入控件
 @property (nonatomic, strong) DSInputView *inputView;
 
@@ -22,16 +22,28 @@
 ////子标题，类似于QQ的手机在线状态 显示在标题下
 //@property (nonatomic, strong) UILabel *subTitleLable;
 
+//连接 数据源、排版对象以及tableView的代理   与视图控制器解耦
+@property (nonatomic, strong) DSSessionConnecter *connecter;
 @end
 
 @implementation DSSessionViewController
 
+
+- (instancetype)initWithSession:(DSSession *)session {
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _session = session;
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //初始化tableView
     [self setupTableView];
     //初始化输入框
     [self setupInputView];
+    //会话相关数据源、排版 代理设置
+    [self setupConnecter];
 }
 
 #pragma mark --  all init
@@ -59,6 +71,12 @@
         self.tableView.height -= self.inputView.toolView.height;
     }
 }
+
+- (void)setupConnecter {
+    _connecter = [[DSSessionConnecter alloc] init];
+    [_connecter connect:self];
+}
+
 
 // 是否显示输入框 3D Touch预览的时候不需要。默认需要显示
 - (BOOL)isShowInputView {

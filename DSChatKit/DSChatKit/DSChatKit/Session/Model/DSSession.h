@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, DSSessionType) {
-    DSSessionTypeSingle = 0,  //一对一
+    DSSessionTypeSingle = 0,   //一对一
     DSSessionTypeGroup  = 1    //群聊
 };
 

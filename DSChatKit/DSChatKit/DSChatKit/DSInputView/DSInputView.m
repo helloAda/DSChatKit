@@ -542,7 +542,11 @@
         _toolView.size = [_toolView sizeThatFits:CGSizeMake(self.width, CGFLOAT_MAX)];
         _toolView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
-        self.maxTextLength = 1000;
+        if (self.inputConfig.maxTextLength <= 0) {
+            self.maxTextLength = 1000;
+        }else {
+            self.maxTextLength = self.inputConfig.maxTextLength;
+        }
         [self refreshStatus:DSInputToolStatusText];
         [self sizeToFit];
         [self didChangeHeight];

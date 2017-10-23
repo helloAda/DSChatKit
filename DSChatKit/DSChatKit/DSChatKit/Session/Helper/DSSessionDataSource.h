@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DSSession.h"
+#import "DSSessionConfig.h"
 
 //数据源实现
 @interface DSSessionDataSource : NSObject
+
+- (instancetype)initWithSession:(DSSession *)session config:(id<DSSessionConfig>)sessionConfig;
 
 @end

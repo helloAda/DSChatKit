@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DSMediaItem.h"
 #import "DSInputEmojiManager.h"
+#import "DSChatKitMessageProvider.h"
 
 @protocol DSSessionConfig <NSObject>
 
@@ -25,4 +26,15 @@
 //是否需要显示输入框，若有实现 3DTouch 则这里配置成不显示
 - (BOOL)isShowInputView;
 
+//inputView 最多输入多长的字符 没实现则为1000
+- (NSInteger)maxTextLength;
+
+//聊天界面每页消息显示条数
+- (NSInteger)messageLimit;
+
+//两条消息间隔多久显示时间戳
+- (NSTimeInterval)showTimestampInterval;
+
+// 消息数据提供器 如果不实现则读取本地聊天记录
+- (id<DSChatKitMessageProvider>)messageDataProvider;
 @end
