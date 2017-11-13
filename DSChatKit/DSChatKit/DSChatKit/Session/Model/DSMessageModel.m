@@ -8,6 +8,19 @@
 
 #import "DSMessageModel.h"
 
+@interface DSMessageModel ()
+
+@end
+
 @implementation DSMessageModel
+
+- (instancetype)initWithMessage:(DSMessage *)message {
+    self = [super init];
+    if (self) {
+        _message = message;
+        _messageTime = message.timestamp;
+    }
+    return self;
+}
 
 @end

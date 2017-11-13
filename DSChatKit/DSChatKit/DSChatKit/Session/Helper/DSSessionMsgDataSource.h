@@ -22,6 +22,9 @@
  */
 - (instancetype)initWithSession:(DSSession *)session config:(id<DSSessionConfig>)sessionConfig;
 
+//数据存放
+@property (nonatomic, strong) NSMutableArray *items;
+
 //会话配置
 @property (nonatomic, weak) id<DSSessionConfig> sessionConfig;
 
@@ -31,9 +34,24 @@
 //两条消息隔多久显示时间戳
 @property (nonatomic, readonly) NSInteger showTimeInterval;
 
-@property (nonatomic, strong) NSMutableArray *items;
+//复位消息
+- (void)resetMessages:(void(^)(NSError *error))handle;
 
-//数据对外接口
+//数据对外接口 加载历史数据
 - (void)loadHistoryMessagesWithComplete:(void(^) (NSInteger index, NSArray *messages,NSError *error))handler;
 
+//返回model所在的index
+- (NSInteger)indexAtModelArray:(DSMessageModel *)model;
+
+//添加消息，会根据时间戳插入到相应位置
+- (NSArray<NSNumber *> *)insertMessageModels:(NSArray*)models;
+
+//添加消息，直接插入消息列表末尾
+- (NSArray<NSNumber *> *)appendMessageModels:(NSArray *)models;
+
+//删除消息
+- (NSArray<NSNumber *> *)deleteMessageModel:(DSMessageModel *)model;
+
+//根据范围批量删除消息
+- (NSArray<NSNumber *> *)deleteModels:(NSRange)range;
 @end

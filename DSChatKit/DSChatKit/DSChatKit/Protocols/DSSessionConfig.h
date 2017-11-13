@@ -35,6 +35,6 @@
 //两条消息间隔多久显示时间戳
 - (NSTimeInterval)showTimestampInterval;
 
-// 消息数据提供器 如果不实现则读取本地聊天记录
+// 消息数据提供器 一定要实现。
 - (id<DSChatKitMessageProvider>)messageDataProvider;
 @end

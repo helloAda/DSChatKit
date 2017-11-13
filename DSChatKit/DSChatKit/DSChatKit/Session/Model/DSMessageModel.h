@@ -17,4 +17,14 @@
 //时间戳
 @property (nonatomic, readonly) NSTimeInterval messageTime;
 
+
+
+/**
+ DSMessage封装成DSMessageModel
+
+ @param message 消息体
+ @return 实例
+ */
+- (instancetype)initWithMessage:(DSMessage *)message;
+
 @end

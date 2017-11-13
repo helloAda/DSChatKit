@@ -10,4 +10,10 @@
 
 @interface DSMessage : NSObject
 
+//消息发送时间
+@property (nonatomic, assign) NSTimeInterval timestamp;
+
+//消息id,唯一标识
+@property (nonatomic, copy,readonly) NSString *messageID;
+
 @end

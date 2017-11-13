@@ -22,6 +22,7 @@
 		7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6221F87888500D69DAA /* DSInputMoreView.m */; };
 		7791C6271F87899100D69DAA /* DSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6261F87899100D69DAA /* DSPageView.m */; };
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
+		779DF9F31FB2A6CB00AFA465 /* DSTimestampModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
 		77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */; };
 		77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */; };
@@ -107,6 +108,8 @@
 		7795AC3D1F7F2EA80034CD3C /* UIView+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DSCategory.h"; sourceTree = "<group>"; };
 		7795AC3E1F7F38490034CD3C /* DSInputScrollTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputScrollTextView.h; sourceTree = "<group>"; };
 		7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputScrollTextView.m; sourceTree = "<group>"; };
+		779DF9F11FB2A6CB00AFA465 /* DSTimestampModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSTimestampModel.h; sourceTree = "<group>"; };
+		779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSTimestampModel.m; sourceTree = "<group>"; };
 		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
 		77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMediaItem.m; sourceTree = "<group>"; };
 		77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfig.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 				77C6D6221F9E0B6E00C138FB /* DSMessage.m */,
 				77C6D61E1F9E0AF300C138FB /* DSMessageModel.h */,
 				77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */,
+				779DF9F11FB2A6CB00AFA465 /* DSTimestampModel.h */,
+				779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */,
 				77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */,
 				77E51FF61F98C64F00EE0334 /* DSSessionLayout.m in Sources */,
+				779DF9F31FB2A6CB00AFA465 /* DSTimestampModel.m in Sources */,
 				7791C6271F87899100D69DAA /* DSPageView.m in Sources */,
 				77E51FE91F9841D400EE0334 /* UIView+DSCategory.m in Sources */,
 			);
