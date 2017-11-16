@@ -52,4 +52,32 @@
 - (void)sendMessageReceipt:(NSArray *)messages complete:(void (^)(DSMessage *))complete;
 @end
 
+@protocol DSSessionLayoutProtocolDelegate <NSObject>
+//用于下拉刷新
+- (void)refresh;
+
+@end
+
+@protocol DSSessionLayoutProtocol <NSObject>
+//更新消息
+- (void)update:(NSIndexPath *)indexPath;
+//插入消息
+- (void)insert:(NSArray *)indexPaths animated:(BOOL)animated;
+//删除消息
+- (void)remove:(NSArray *)indexPaths;
+//计算内容大小
+- (void)calculateContent:(DSMessageModel *)model;
+//刷新tableView;
+- (void)reloadTable;
+//重置布局
+- (void)resetLayout;
+//改变键盘高度
+- (void)changeLayout:(CGFloat)inputViewHeight;
+//设置代理
+- (void)setDelegate:(id<DSSessionLayoutProtocolDelegate>)delegate;
+//下拉刷新之后计算布局
+- (void)layoutAfterRefresh;
+
+@end
+
 #endif

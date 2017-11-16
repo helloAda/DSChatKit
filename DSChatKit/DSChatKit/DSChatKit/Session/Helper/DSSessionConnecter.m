@@ -24,6 +24,7 @@
     //数据源实现
     DSSessionDataSource *dataSource = [[DSSessionDataSource alloc] init];
     //排版实现
-    DSSessionLayout *layout = [DSSessionLayout alloc] 
+    DSSessionLayout *layout = [[DSSessionLayout alloc] initWithSession:session tableView:tableView config:sessionConfig];
+    
 }
 @end

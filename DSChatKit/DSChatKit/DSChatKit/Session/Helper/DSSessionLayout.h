@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DSSessionPrivateProtocol.h"
 
-@interface DSSessionLayout : NSObject
+@interface DSSessionLayout : NSObject<DSSessionLayoutProtocol>
+
+//初始化
+- (instancetype)initWithSession:(DSSession *)session
+                      tableView:(UITableView *)tableView
+                         config:(id<DSSessionConfig>)sessionConfig;
+
 
 @end

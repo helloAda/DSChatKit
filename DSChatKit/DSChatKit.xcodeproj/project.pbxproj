@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7704C6E91FBD968200064B3F /* UITableView+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6E81FBD968200064B3F /* UITableView+DSCategory.m */; };
+		7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */; };
 		774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 774263481F8EF988002BDA84 /* UIImage+DSCategory.m */; };
 		7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742634B1F8EFDDE002BDA84 /* DSChatKit.m */; };
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
@@ -63,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7704C6E71FBD968200064B3F /* UITableView+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+DSCategory.h"; sourceTree = "<group>"; };
+		7704C6E81FBD968200064B3F /* UITableView+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DSCategory.m"; sourceTree = "<group>"; };
+		7704C6EB1FBDB7CC00064B3F /* DSMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageCell.h; sourceTree = "<group>"; };
+		7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessageCell.m; sourceTree = "<group>"; };
 		772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionPrivateProtocol.h; sourceTree = "<group>"; };
 		774263471F8EF988002BDA84 /* UIImage+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+DSCategory.h"; sourceTree = "<group>"; };
 		774263481F8EF988002BDA84 /* UIImage+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DSCategory.m"; sourceTree = "<group>"; };
@@ -184,6 +190,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7704C6EA1FBDB7B400064B3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7704C6EB1FBDB7CC00064B3F /* DSMessageCell.h */,
+				7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7791C6091F87249F00D69DAA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +242,8 @@
 				7795AC3C1F7F2EA80034CD3C /* UIView+DSCategory.m */,
 				774263471F8EF988002BDA84 /* UIImage+DSCategory.h */,
 				774263481F8EF988002BDA84 /* UIImage+DSCategory.m */,
+				7704C6E71FBD968200064B3F /* UITableView+DSCategory.h */,
+				7704C6E81FBD968200064B3F /* UITableView+DSCategory.m */,
 			);
 			path = DSCategory;
 			sourceTree = "<group>";
@@ -252,6 +269,7 @@
 		77A49BA11F973B3100F7DD10 /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				7704C6EA1FBDB7B400064B3F /* View */,
 				77E51FFA1F98CA5C00EE0334 /* Model */,
 				77E51FEA1F98BFF800EE0334 /* Helper */,
 				77A49BA21F973B4500F7DD10 /* DSSessionViewController.h */,
@@ -536,9 +554,11 @@
 				7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */,
 				77C6D6201F9E0AF300C138FB /* DSMessageModel.m in Sources */,
 				77E51FF01F98C4E700EE0334 /* DSSessionTableAdapter.m in Sources */,
+				7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				77E51FED1F98C06400EE0334 /* DSSessionConnecter.m in Sources */,
 				778580101F8E110F005187B5 /* DSInputEmojiView.m in Sources */,
+				7704C6E91FBD968200064B3F /* UITableView+DSCategory.m in Sources */,
 				7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */,
 				777792811F90567900752427 /* DSInputEmojiButton.m in Sources */,
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,

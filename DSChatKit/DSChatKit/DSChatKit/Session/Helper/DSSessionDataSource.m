@@ -21,6 +21,7 @@
 
 @implementation DSSessionDataSource
 
+//暂时预留session 其实只用上了sessionConfig
 - (instancetype)initWithSession:(DSSession *)session config:(id<DSSessionConfig>)sessionConfig {
     self = [super init];
     if (self) {

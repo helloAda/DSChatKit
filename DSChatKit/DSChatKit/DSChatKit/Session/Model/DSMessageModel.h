@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "DSMessage.h"
 
 @interface DSMessageModel : NSObject
@@ -28,5 +29,8 @@
  @return 实例
  */
 - (instancetype)initWithMessage:(DSMessage *)message;
+
+//计算内容大小
+- (CGSize)contentSize:(CGFloat)width;
 
 @end
