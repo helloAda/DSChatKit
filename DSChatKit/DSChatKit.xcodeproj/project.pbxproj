@@ -63,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionPrivateProtocol.h; sourceTree = "<group>"; };
 		774263471F8EF988002BDA84 /* UIImage+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+DSCategory.h"; sourceTree = "<group>"; };
 		774263481F8EF988002BDA84 /* UIImage+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DSCategory.m"; sourceTree = "<group>"; };
 		7742634A1F8EFDDE002BDA84 /* DSChatKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKit.h; sourceTree = "<group>"; };
@@ -375,6 +376,7 @@
 				77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */,
 				77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */,
 				77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */,
+				772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";

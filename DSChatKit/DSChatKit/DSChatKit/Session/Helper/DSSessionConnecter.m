@@ -7,10 +7,9 @@
 //
 
 #import "DSSessionConnecter.h"
-#import "DSSession.h"
-#import "DSSessionConfig.h"
-#import "DSSessionDataSource.h"
 #import "DSSessionViewController.h"
+#import "DSSessionDataSource.h"
+#import "DSSessionLayout.h"
 @interface DSSessionConnecter ()
 
 
@@ -22,7 +21,9 @@
     DSSession *session = vc.session;
     id <DSSessionConfig> sessionConfig = vc.sessionConfig;
     UITableView *tableView = vc.tableView;
-    
+    //数据源实现
     DSSessionDataSource *dataSource = [[DSSessionDataSource alloc] init];
+    //排版实现
+    DSSessionLayout *layout = [DSSessionLayout alloc] 
 }
 @end

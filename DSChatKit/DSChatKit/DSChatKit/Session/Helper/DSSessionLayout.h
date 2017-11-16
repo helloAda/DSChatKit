@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DSSessionPrivateProtocol.h"
 
 @interface DSSessionLayout : NSObject
 

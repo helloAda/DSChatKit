@@ -37,4 +37,11 @@
 
 // 消息数据提供器 一定要实现。
 - (id<DSChatKitMessageProvider>)messageDataProvider;
+
+//是否需要处理已读回执
+- (BOOL)shouldHandleReceipt;
+
+//这个message需要做已读回执
+- (BOOL)shouldHandleReceiptForMessage:(DSMessage *)message;
+
 @end

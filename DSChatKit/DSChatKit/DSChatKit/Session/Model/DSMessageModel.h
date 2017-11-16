@@ -17,6 +17,8 @@
 //时间戳
 @property (nonatomic, readonly) NSTimeInterval messageTime;
 
+//是否需要展示已读Lable;
+@property (nonatomic) BOOL shouldShowReadLabel;
 
 
 /**

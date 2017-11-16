@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "DSSession.h"
 #import "DSSessionConfig.h"
+#import "DSSessionPrivateProtocol.h"
 
 //数据源实现
-@interface DSSessionDataSource : NSObject
+@interface DSSessionDataSource : NSObject<DSSessionDataSourceProtocol>
 
 - (instancetype)initWithSession:(DSSession *)session config:(id<DSSessionConfig>)sessionConfig;
 
