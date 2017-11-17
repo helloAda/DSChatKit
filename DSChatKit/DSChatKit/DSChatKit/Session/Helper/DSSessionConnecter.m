@@ -10,6 +10,8 @@
 #import "DSSessionViewController.h"
 #import "DSSessionDataSource.h"
 #import "DSSessionLayout.h"
+#import "DSSessionInteractor.h"
+
 @interface DSSessionConnecter ()
 
 
@@ -22,9 +24,16 @@
     id <DSSessionConfig> sessionConfig = vc.sessionConfig;
     UITableView *tableView = vc.tableView;
     //数据源实现
-    DSSessionDataSource *dataSource = [[DSSessionDataSource alloc] init];
+    DSSessionDataSource *dataSource = [[DSSessionDataSource alloc] initWithSession:session config:sessionConfig];
     //排版实现
     DSSessionLayout *layout = [[DSSessionLayout alloc] initWithSession:session tableView:tableView config:sessionConfig];
     
+    //用于 数据、排版与适配器交互
+    DSSessionInteractor *interactor = [[DSSessionInteractor alloc] initWithSession:session config:sessionConfig];
+    interactor.delegate = vc;
+    interactor.dataSource = dataSource;
+    interactor.layout = layout;
+    
+    [layout setDelegate:interactor];
 }
 @end

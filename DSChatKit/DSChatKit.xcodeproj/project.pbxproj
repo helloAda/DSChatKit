@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7704C6E91FBD968200064B3F /* UITableView+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6E81FBD968200064B3F /* UITableView+DSCategory.m */; };
 		7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */; };
+		77330C761FBE72E500DE37FF /* DSChatKitNotificationFirer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */; };
 		774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 774263481F8EF988002BDA84 /* UIImage+DSCategory.m */; };
 		7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742634B1F8EFDDE002BDA84 /* DSChatKit.m */; };
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
@@ -70,6 +71,9 @@
 		7704C6EB1FBDB7CC00064B3F /* DSMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageCell.h; sourceTree = "<group>"; };
 		7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessageCell.m; sourceTree = "<group>"; };
 		772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionPrivateProtocol.h; sourceTree = "<group>"; };
+		77330C741FBE72E500DE37FF /* DSChatKitNotificationFirer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitNotificationFirer.h; sourceTree = "<group>"; };
+		77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitNotificationFirer.m; sourceTree = "<group>"; };
+		77330C771FBE7B1200DE37FF /* DSSessionConfigurateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfigurateProtocol.h; sourceTree = "<group>"; };
 		774263471F8EF988002BDA84 /* UIImage+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+DSCategory.h"; sourceTree = "<group>"; };
 		774263481F8EF988002BDA84 /* UIImage+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DSCategory.m"; sourceTree = "<group>"; };
 		7742634A1F8EFDDE002BDA84 /* DSChatKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKit.h; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				7791C6251F87899100D69DAA /* DSPageView.h */,
 				7791C6261F87899100D69DAA /* DSPageView.m */,
 				77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */,
+				77330C741FBE72E500DE37FF /* DSChatKitNotificationFirer.h */,
+				77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -382,6 +388,8 @@
 		77E51FEA1F98BFF800EE0334 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */,
+				77330C771FBE7B1200DE37FF /* DSSessionConfigurateProtocol.h */,
 				77E51FEB1F98C06400EE0334 /* DSSessionConnecter.h */,
 				77E51FEC1F98C06400EE0334 /* DSSessionConnecter.m */,
 				77E51FEE1F98C4E700EE0334 /* DSSessionTableAdapter.h */,
@@ -394,7 +402,6 @@
 				77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */,
 				77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */,
 				77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */,
-				772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -563,6 +570,7 @@
 				777792811F90567900752427 /* DSInputEmojiButton.m in Sources */,
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
+				77330C761FBE72E500DE37FF /* DSChatKitNotificationFirer.m in Sources */,
 				77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */,
 				77E51FF91F98C70F00EE0334 /* DSSessionInteractor.m in Sources */,
 				778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */,

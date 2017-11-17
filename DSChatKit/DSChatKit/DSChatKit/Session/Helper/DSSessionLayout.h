@@ -16,5 +16,7 @@
                       tableView:(UITableView *)tableView
                          config:(id<DSSessionConfig>)sessionConfig;
 
+//代理
+@property (nonatomic, weak) id<DSSessionLayoutProtocolDelegate> delegate;
 
 @end

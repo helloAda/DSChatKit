@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DSSession.h"
 
 //消息发送状态
 typedef NS_ENUM(NSInteger, DSMessageSendStatus) {
@@ -30,11 +31,14 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 //消息id,唯一标识
 @property (nonatomic, copy, readonly) NSString *messageID;
 
+//消息所属会话
+@property (nonatomic, nonatomic, copy, readonly) DSSession *session;
+
 //消息附件下载状态 仅针对收到的消息
 @property (nonatomic, assign, readonly) DSMessageAttachmentDownloadState attachmentDownloadState;
 
 //是否是收到的消息 用于消息出错时需要重发还是重收
-@property (nonatomic, assign ,readonly) BOOL isReceivedMsg;
+@property (nonatomic, assign , readonly) BOOL isReceivedMsg;
 
 //是否是发送出去的消息 用于判断头像排版的位置
 @property (nonatomic, assign, readonly) BOOL isSendMsg;
@@ -44,5 +48,9 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
  只有单聊消息，并且消息的isSendMsg = YES这个字段才有效，需要对方调用过发送已读回执的接口
  */
 @property (nonatomic, assign, readonly) BOOL isRemoteRead;
+
+//消息是否已经删除 
+@property (nonatomic, assign, readonly) BOOL isDeleted;
+
 
 @end

@@ -23,8 +23,7 @@
 @property (nonatomic, strong) DSSession *session;
 //下拉刷新控件
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-//代理
-@property (nonatomic, weak) id<DSSessionLayoutProtocolDelegate> delegate;
+
 @property (nonatomic,assign)  CGRect viewRect;
 
 @end
@@ -144,9 +143,6 @@
     }
 }
 
-- (void)setDelegate:(id<DSSessionLayoutProtocolDelegate>)delegate {
-    _delegate = delegate;
-}
 
 #pragma mark - Notification
 

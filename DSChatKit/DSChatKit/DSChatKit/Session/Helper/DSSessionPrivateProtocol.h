@@ -16,9 +16,9 @@
 //消息操作结果
 @interface DSSessionMessageOperateResult : NSObject
 //消息对应的indexpaths
-@property (nonatomic,copy) NSArray *indexpaths;
+@property (nonatomic, copy) NSArray *indexpaths;
 //消息数据
-@property (nonatomic,copy) NSArray *messageModels;
+@property (nonatomic, copy) NSArray *messageModels;
 
 @end
 
@@ -44,7 +44,7 @@
 - (void)resetMessages:(void(^)(NSError *error))handler;
 //加载历史消息
 - (void)loadHistoryMessagesWithComplete:(void(^)(NSInteger index, NSArray *messages , NSError *error))handler;
-//检查附件下载状态，如果没有下载则回调该消息
+//检查附件下载状态，如果有附件并且没有下载则回调该消息
 - (void)checkAttachmentState:(NSArray *)messages complete:(void (^)(DSMessage *))complete;
 //检查已读回执是否需要显示，显示在哪里
 - (NSDictionary *)checkReceipt;
@@ -73,10 +73,16 @@
 - (void)resetLayout;
 //改变键盘高度
 - (void)changeLayout:(CGFloat)inputViewHeight;
-//设置代理
-- (void)setDelegate:(id<DSSessionLayoutProtocolDelegate>)delegate;
+
 //下拉刷新之后计算布局
 - (void)layoutAfterRefresh;
+
+@end
+
+//在这里定义这两个方法 用于DSSessionConnecter.m
+@interface DSSessionViewController(Interactor)
+
+- (void)setInteractor:(id<DSSessionInteractorProtocol>) interactor;
 
 @end
 

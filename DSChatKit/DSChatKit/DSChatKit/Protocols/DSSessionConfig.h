@@ -44,4 +44,7 @@
 //这个message需要做已读回执
 - (BOOL)shouldHandleReceiptForMessage:(DSMessage *)message;
 
+//进入会话是否自动获取历史消息  没实现自动获取
+- (BOOL)autoFetchMessageWhenOpenSession;
+
 @end

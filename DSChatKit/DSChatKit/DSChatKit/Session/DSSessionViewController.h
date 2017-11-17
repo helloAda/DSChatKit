@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "DSSessionConfig.h"
 #import "DSSession.h"
+#import "DSSessionConfigurateProtocol.h"
 
-@interface DSSessionViewController : UIViewController
+@interface DSSessionViewController : UIViewController <DSSessionInteractorProtocolDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 //会话对象
