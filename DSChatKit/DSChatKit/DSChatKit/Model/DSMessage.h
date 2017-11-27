@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DSSession.h"
+#import "DSGlobalDefs.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 //消息发送状态
 typedef NS_ENUM(NSInteger, DSMessageSendStatus) {
@@ -25,6 +28,12 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 
 @interface DSMessage : NSObject
 
+//消息类型
+@property (nonatomic, assign, readonly) DSMessageType messageType;
+
+//消息来源
+@property (nullable, nonatomic, copy) NSString *from;
+
 //消息发送时间
 @property (nonatomic, assign) NSTimeInterval timestamp;
 
@@ -36,6 +45,9 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 
 //消息附件下载状态 仅针对收到的消息
 @property (nonatomic, assign, readonly) DSMessageAttachmentDownloadState attachmentDownloadState;
+
+//消息发送状态 仅针对发送的消息
+@property (nonatomic, assign, readonly) DSMessageSendStatus sendState;
 
 //是否是收到的消息 用于消息出错时需要重发还是重收
 @property (nonatomic, assign , readonly) BOOL isReceivedMsg;
@@ -52,5 +64,8 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 //消息是否已经删除 
 @property (nonatomic, assign, readonly) BOOL isDeleted;
 
+//消息是否被播放过
+@property (nonatomic, assign) BOOL isPlayed;
 
+NS_ASSUME_NONNULL_END
 @end

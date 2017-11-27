@@ -27,4 +27,9 @@
     }
     return self;
 }
+
+
+//- (DSChatKitInfo *)infoByUser:(NSString *)userId option:(DSChatKitInfoFetchOption *)option {
+//
+//}
 @end

@@ -11,6 +11,7 @@
 #import "DSSessionDataSource.h"
 #import "DSSessionLayout.h"
 #import "DSSessionInteractor.h"
+#import "DSSessionTableAdapter.h"
 
 @interface DSSessionConnecter ()
 
@@ -35,5 +36,13 @@
     interactor.layout = layout;
     
     [layout setDelegate:interactor];
+    [vc setInteractor:interactor];
+    
+    DSSessionTableAdapter *adapter = [[DSSessionTableAdapter alloc] init];
+    adapter.interactor = interactor;
+    adapter.delegate = vc;
+
+    vc.tableView.delegate = adapter;
+    vc.tableView.dataSource = adapter;
 }
 @end

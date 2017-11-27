@@ -10,11 +10,13 @@
 #define DSChatKitMacro_h
 
 //rgb颜色
-#define DScolorFromRGBA(rgbValue, alphaValue) [UIColor \
+#define DSColorFromRGBA(rgbValue, alphaValue) [UIColor \
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0x00FF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0x0000FF))/255.0 \
 alpha:alphaValue]
+
+#define DSColorFromRGB(rgbValue) DSColorFromRGBA(rgbValue, 1)
 
 #define DS_Dispatch_Async_Main(block)\
 if ([NSThread isMainThread]) {\

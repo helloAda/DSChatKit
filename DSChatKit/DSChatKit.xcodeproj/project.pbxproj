@@ -7,11 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D18EDF693BF93FF08692580 /* libPods-DSChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CD485CDB119023D44738AA /* libPods-DSChatKit.a */; };
 		7704C6E91FBD968200064B3F /* UITableView+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6E81FBD968200064B3F /* UITableView+DSCategory.m */; };
 		7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */; };
 		77330C761FBE72E500DE37FF /* DSChatKitNotificationFirer.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */; };
+		77330C811FBF092900DE37FF /* DSTimestampModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C7B1FBF092900DE37FF /* DSTimestampModel.m */; };
+		77330C821FBF092900DE37FF /* DSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C7D1FBF092900DE37FF /* DSMessageModel.m */; };
+		77330C831FBF092900DE37FF /* DSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C7E1FBF092900DE37FF /* DSMessage.m */; };
+		77330C841FBF092900DE37FF /* DSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C801FBF092900DE37FF /* DSSession.m */; };
+		77330C871FBF097F00DE37FF /* DSMessageCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C861FBF097F00DE37FF /* DSMessageCellFactory.m */; };
+		77330C8A1FBF0A9500DE37FF /* DSSessionTimestampCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C891FBF0A9500DE37FF /* DSSessionTimestampCell.m */; };
+		77330C8D1FBF0D6100DE37FF /* DSAvatarImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77330C8C1FBF0D6100DE37FF /* DSAvatarImageView.m */; };
 		774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 774263481F8EF988002BDA84 /* UIImage+DSCategory.m */; };
 		7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7742634B1F8EFDDE002BDA84 /* DSChatKit.m */; };
+		77450EDB1FC5094E00324787 /* DSChatKitInfoFetchOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 77450EDA1FC5094E00324787 /* DSChatKitInfoFetchOption.m */; };
+		77450EDE1FC50F1700324787 /* DSChatKitInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 77450EDD1FC50F1700324787 /* DSChatKitInfo.m */; };
+		77450EE31FC5551400324787 /* DSChatKitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 77450EE21FC5551400324787 /* DSChatKitUtil.m */; };
+		7758F90B1FC035EE005E86F9 /* DSSessionMessageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7758F90A1FC035EE005E86F9 /* DSSessionMessageContentView.m */; };
+		7758F90E1FC03741005E86F9 /* DSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7758F90D1FC03741005E86F9 /* DSBadgeView.m */; };
 		775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */; };
 		7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */; };
 		777792811F90567900752427 /* DSInputEmojiButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 777792801F90567900752427 /* DSInputEmojiButton.m */; };
@@ -20,17 +33,20 @@
 		778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580121F8E146B005187B5 /* DSInputEmojiBottomView.m */; };
 		778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 778580181F8E1E36005187B5 /* DSInputEmojiManager.m */; };
 		7785801B1F8E244A005187B5 /* DSInputEmoji.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */; };
+		7789B3681FC40C3400005E2B /* DSChatKitEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B3671FC40C3400005E2B /* DSChatKitEvent.m */; };
+		7789B36D1FC4145000005E2B /* DSChatKitUIConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 7789B36C1FC4145000005E2B /* DSChatKitUIConfig.m */; };
 		7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B6AF1F7D2F0C00154EF9 /* DSInputToolView.m */; };
 		7791C6201F87561400D69DAA /* DSInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B6B11F7D2F0C00154EF9 /* DSInputView.m */; };
 		7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6221F87888500D69DAA /* DSInputMoreView.m */; };
 		7791C6271F87899100D69DAA /* DSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7791C6261F87899100D69DAA /* DSPageView.m */; };
+		779225791FC7B7BD00092ECD /* icon_session_time_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779225771FC7B7BC00092ECD /* icon_session_time_bg@3x.png */; };
+		7792257A1FC7B7BD00092ECD /* icon_session_time_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779225781FC7B7BD00092ECD /* icon_session_time_bg@2x.png */; };
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
-		779DF9F31FB2A6CB00AFA465 /* DSTimestampModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */; };
+		779D92001FC267BC006C8282 /* icon_message_cell_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */; };
+		779D92011FC267BC006C8282 /* icon_message_cell_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
 		77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */; };
 		77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */; };
-		77C6D6201F9E0AF300C138FB /* DSMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */; };
-		77C6D6231F9E0B6E00C138FB /* DSMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6D6221F9E0B6E00C138FB /* DSMessage.m */; };
 		77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */; };
 		77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E0B67E1F7D2EE700154EF9 /* ViewController.m */; };
 		77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E0B6801F7D2EE700154EF9 /* Main.storyboard */; };
@@ -45,7 +61,6 @@
 		77E51FF31F98C5ED00EE0334 /* DSSessionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF21F98C5ED00EE0334 /* DSSessionDataSource.m */; };
 		77E51FF61F98C64F00EE0334 /* DSSessionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */; };
 		77E51FF91F98C70F00EE0334 /* DSSessionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */; };
-		77E51FFD1F98CA6800EE0334 /* DSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FFC1F98CA6800EE0334 /* DSSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,12 +89,39 @@
 		77330C741FBE72E500DE37FF /* DSChatKitNotificationFirer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitNotificationFirer.h; sourceTree = "<group>"; };
 		77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitNotificationFirer.m; sourceTree = "<group>"; };
 		77330C771FBE7B1200DE37FF /* DSSessionConfigurateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfigurateProtocol.h; sourceTree = "<group>"; };
+		77330C781FBF04F800DE37FF /* DSMessageCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageCellDelegate.h; sourceTree = "<group>"; };
+		77330C791FBF092800DE37FF /* DSMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMessage.h; sourceTree = "<group>"; };
+		77330C7A1FBF092900DE37FF /* DSTimestampModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTimestampModel.h; sourceTree = "<group>"; };
+		77330C7B1FBF092900DE37FF /* DSTimestampModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTimestampModel.m; sourceTree = "<group>"; };
+		77330C7C1FBF092900DE37FF /* DSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSession.h; sourceTree = "<group>"; };
+		77330C7D1FBF092900DE37FF /* DSMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMessageModel.m; sourceTree = "<group>"; };
+		77330C7E1FBF092900DE37FF /* DSMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMessage.m; sourceTree = "<group>"; };
+		77330C7F1FBF092900DE37FF /* DSMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMessageModel.h; sourceTree = "<group>"; };
+		77330C801FBF092900DE37FF /* DSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSession.m; sourceTree = "<group>"; };
+		77330C851FBF097F00DE37FF /* DSMessageCellFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageCellFactory.h; sourceTree = "<group>"; };
+		77330C861FBF097F00DE37FF /* DSMessageCellFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessageCellFactory.m; sourceTree = "<group>"; };
+		77330C881FBF0A9500DE37FF /* DSSessionTimestampCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionTimestampCell.h; sourceTree = "<group>"; };
+		77330C891FBF0A9500DE37FF /* DSSessionTimestampCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionTimestampCell.m; sourceTree = "<group>"; };
+		77330C8B1FBF0D6100DE37FF /* DSAvatarImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAvatarImageView.h; sourceTree = "<group>"; };
+		77330C8C1FBF0D6100DE37FF /* DSAvatarImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAvatarImageView.m; sourceTree = "<group>"; };
 		774263471F8EF988002BDA84 /* UIImage+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+DSCategory.h"; sourceTree = "<group>"; };
 		774263481F8EF988002BDA84 /* UIImage+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DSCategory.m"; sourceTree = "<group>"; };
 		7742634A1F8EFDDE002BDA84 /* DSChatKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKit.h; sourceTree = "<group>"; };
 		7742634B1F8EFDDE002BDA84 /* DSChatKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKit.m; sourceTree = "<group>"; };
+		77450ED91FC5094E00324787 /* DSChatKitInfoFetchOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitInfoFetchOption.h; sourceTree = "<group>"; };
+		77450EDA1FC5094E00324787 /* DSChatKitInfoFetchOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitInfoFetchOption.m; sourceTree = "<group>"; };
+		77450EDC1FC50F1700324787 /* DSChatKitInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitInfo.h; sourceTree = "<group>"; };
+		77450EDD1FC50F1700324787 /* DSChatKitInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitInfo.m; sourceTree = "<group>"; };
+		77450EDF1FC52CF800324787 /* DSChatKitDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitDependency.h; sourceTree = "<group>"; };
+		77450EE11FC5551400324787 /* DSChatKitUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitUtil.h; sourceTree = "<group>"; };
+		77450EE21FC5551400324787 /* DSChatKitUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitUtil.m; sourceTree = "<group>"; };
+		7758F9091FC035EE005E86F9 /* DSSessionMessageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionMessageContentView.h; sourceTree = "<group>"; };
+		7758F90A1FC035EE005E86F9 /* DSSessionMessageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionMessageContentView.m; sourceTree = "<group>"; };
+		7758F90C1FC03741005E86F9 /* DSBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSBadgeView.h; sourceTree = "<group>"; };
+		7758F90D1FC03741005E86F9 /* DSBadgeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSBadgeView.m; sourceTree = "<group>"; };
 		775CE0BF1F7E8D9B00E399B5 /* DSInputTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
 		775CE0C01F7E8D9B00E399B5 /* DSInputTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
+		775F2E661FC3DC45007397BD /* DSCellLayoutConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCellLayoutConfig.h; sourceTree = "<group>"; };
 		7763DF6D1F95E12F00E29431 /* DSInputAtCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputAtCache.h; sourceTree = "<group>"; };
 		7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputAtCache.m; sourceTree = "<group>"; };
 		7777927F1F90567900752427 /* DSInputEmojiButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiButton.h; sourceTree = "<group>"; };
@@ -93,6 +135,12 @@
 		778580171F8E1E36005187B5 /* DSInputEmojiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiManager.h; sourceTree = "<group>"; };
 		778580181F8E1E36005187B5 /* DSInputEmojiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiManager.m; sourceTree = "<group>"; };
 		7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DSInputEmoji.bundle; sourceTree = "<group>"; };
+		7789B3661FC40C3400005E2B /* DSChatKitEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitEvent.h; sourceTree = "<group>"; };
+		7789B3671FC40C3400005E2B /* DSChatKitEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitEvent.m; sourceTree = "<group>"; };
+		7789B36A1FC4142F00005E2B /* DSChatKitMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMacro.h; sourceTree = "<group>"; };
+		7789B36B1FC4145000005E2B /* DSChatKitUIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitUIConfig.h; sourceTree = "<group>"; };
+		7789B36C1FC4145000005E2B /* DSChatKitUIConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKitUIConfig.m; sourceTree = "<group>"; };
+		7789B36E1FC422A000005E2B /* DSGlobalDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSGlobalDefs.h; sourceTree = "<group>"; };
 		7791C60A1F8724B500D69DAA /* input_keyboard_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_highlight@3x.png"; sourceTree = "<group>"; };
 		7791C60B1F8724B500D69DAA /* input_keyboard_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_normal@3x.png"; sourceTree = "<group>"; };
 		7791C60C1F8724B500D69DAA /* input_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_normal@2x.png"; sourceTree = "<group>"; };
@@ -115,26 +163,23 @@
 		7791C6221F87888500D69DAA /* DSInputMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputMoreView.m; sourceTree = "<group>"; };
 		7791C6251F87899100D69DAA /* DSPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPageView.h; sourceTree = "<group>"; };
 		7791C6261F87899100D69DAA /* DSPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSPageView.m; sourceTree = "<group>"; };
+		779225771FC7B7BC00092ECD /* icon_session_time_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_session_time_bg@3x.png"; sourceTree = "<group>"; };
+		779225781FC7B7BD00092ECD /* icon_session_time_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_session_time_bg@2x.png"; sourceTree = "<group>"; };
 		7795AC3C1F7F2EA80034CD3C /* UIView+DSCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+DSCategory.m"; sourceTree = "<group>"; };
 		7795AC3D1F7F2EA80034CD3C /* UIView+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DSCategory.h"; sourceTree = "<group>"; };
 		7795AC3E1F7F38490034CD3C /* DSInputScrollTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputScrollTextView.h; sourceTree = "<group>"; };
 		7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputScrollTextView.m; sourceTree = "<group>"; };
-		779DF9F11FB2A6CB00AFA465 /* DSTimestampModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSTimestampModel.h; sourceTree = "<group>"; };
-		779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSTimestampModel.m; sourceTree = "<group>"; };
+		779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@2x.png"; sourceTree = "<group>"; };
+		779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@3x.png"; sourceTree = "<group>"; };
 		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
 		77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMediaItem.m; sourceTree = "<group>"; };
 		77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionConfig.h; sourceTree = "<group>"; };
 		77A49BA21F973B4500F7DD10 /* DSSessionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionViewController.h; sourceTree = "<group>"; };
 		77A49BA31F973B4500F7DD10 /* DSSessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionViewController.m; sourceTree = "<group>"; };
-		77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMacro.h; sourceTree = "<group>"; };
 		77A49BA61F974E1300F7DD10 /* DSInputActionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputActionDelegate.h; sourceTree = "<group>"; };
 		77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionMsgDataSource.h; sourceTree = "<group>"; };
 		77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionMsgDataSource.m; sourceTree = "<group>"; };
 		77C6D61A1F9E019F00C138FB /* DSChatKitMessageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKitMessageProvider.h; sourceTree = "<group>"; };
-		77C6D61E1F9E0AF300C138FB /* DSMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageModel.h; sourceTree = "<group>"; };
-		77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessageModel.m; sourceTree = "<group>"; };
-		77C6D6211F9E0B6E00C138FB /* DSMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessage.h; sourceTree = "<group>"; };
-		77C6D6221F9E0B6E00C138FB /* DSMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMessage.m; sourceTree = "<group>"; };
 		77E0B6771F7D2EE700154EF9 /* DSChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E0B67A1F7D2EE700154EF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77E0B67B1F7D2EE700154EF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -165,8 +210,9 @@
 		77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionLayout.m; sourceTree = "<group>"; };
 		77E51FF71F98C70F00EE0334 /* DSSessionInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionInteractor.h; sourceTree = "<group>"; };
 		77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionInteractor.m; sourceTree = "<group>"; };
-		77E51FFB1F98CA6800EE0334 /* DSSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSession.h; sourceTree = "<group>"; };
-		77E51FFC1F98CA6800EE0334 /* DSSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSession.m; sourceTree = "<group>"; };
+		A27A3D83EF5EB11CA9846F7A /* Pods-DSChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit.release.xcconfig"; sourceTree = "<group>"; };
+		B8CD485CDB119023D44738AA /* libPods-DSChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDFD22B0EAB4ED659F15CBC2 /* Pods-DSChatKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSChatKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D18EDF693BF93FF08692580 /* libPods-DSChatKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,14 +241,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6948F0C555EC6C1940557C04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8CD485CDB119023D44738AA /* libPods-DSChatKit.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7704C6EA1FBDB7B400064B3F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7758F9081FC03565005E86F9 /* SessionContentView */,
 				7704C6EB1FBDB7CC00064B3F /* DSMessageCell.h */,
 				7704C6EC1FBDB7CC00064B3F /* DSMessageCell.m */,
+				77330C881FBF0A9500DE37FF /* DSSessionTimestampCell.h */,
+				77330C891FBF0A9500DE37FF /* DSSessionTimestampCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
+		};
+		77450EE01FC5543F00324787 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				77450EE11FC5551400324787 /* DSChatKitUtil.h */,
+				77450EE21FC5551400324787 /* DSChatKitUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		7758F9081FC03565005E86F9 /* SessionContentView */ = {
+			isa = PBXGroup;
+			children = (
+				7758F9091FC035EE005E86F9 /* DSSessionMessageContentView.h */,
+				7758F90A1FC035EE005E86F9 /* DSSessionMessageContentView.m */,
+			);
+			path = SessionContentView;
+			sourceTree = "<group>";
+		};
+		7789B3691FC413F200005E2B /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				7789B36E1FC422A000005E2B /* DSGlobalDefs.h */,
+				7789B36A1FC4142F00005E2B /* DSChatKitMacro.h */,
+				7789B36B1FC4145000005E2B /* DSChatKitUIConfig.h */,
+				7789B36C1FC4145000005E2B /* DSChatKitUIConfig.m */,
+				77450EDF1FC52CF800324787 /* DSChatKitDependency.h */,
+			);
+			name = Global;
+			path = DSChatKit/DSChatKit/Global;
+			sourceTree = SOURCE_ROOT;
 		};
 		7791C6091F87249F00D69DAA /* Resources */ = {
 			isa = PBXGroup;
@@ -224,6 +313,10 @@
 				7791C6161F8724D100D69DAA /* input_voice_normal@2x.png */,
 				7791C61C1F872E1D00D69DAA /* input_text_bg@2x.png */,
 				7791C61D1F872E2000D69DAA /* input_text_bg@3x.png */,
+				779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */,
+				779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */,
+				779225781FC7B7BD00092ECD /* icon_session_time_bg@2x.png */,
+				779225771FC7B7BC00092ECD /* icon_session_time_bg@3x.png */,
 				7785801A1F8E244A005187B5 /* DSInputEmoji.bundle */,
 			);
 			path = Resources;
@@ -234,9 +327,12 @@
 			children = (
 				7791C6251F87899100D69DAA /* DSPageView.h */,
 				7791C6261F87899100D69DAA /* DSPageView.m */,
-				77A49BA51F973FB800F7DD10 /* DSChatKitMacro.h */,
 				77330C741FBE72E500DE37FF /* DSChatKitNotificationFirer.h */,
 				77330C751FBE72E500DE37FF /* DSChatKitNotificationFirer.m */,
+				77330C8B1FBF0D6100DE37FF /* DSAvatarImageView.h */,
+				77330C8C1FBF0D6100DE37FF /* DSAvatarImageView.m */,
+				7758F90C1FC03741005E86F9 /* DSBadgeView.h */,
+				7758F90D1FC03741005E86F9 /* DSBadgeView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -257,8 +353,22 @@
 		77A3C2FA1F88C78300F2DA07 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				77330C7C1FBF092900DE37FF /* DSSession.h */,
+				77330C801FBF092900DE37FF /* DSSession.m */,
+				77330C791FBF092800DE37FF /* DSMessage.h */,
+				77330C7E1FBF092900DE37FF /* DSMessage.m */,
+				77330C7F1FBF092900DE37FF /* DSMessageModel.h */,
+				77330C7D1FBF092900DE37FF /* DSMessageModel.m */,
+				77330C7A1FBF092900DE37FF /* DSTimestampModel.h */,
+				77330C7B1FBF092900DE37FF /* DSTimestampModel.m */,
 				77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */,
 				77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */,
+				7789B3661FC40C3400005E2B /* DSChatKitEvent.h */,
+				7789B3671FC40C3400005E2B /* DSChatKitEvent.m */,
+				77450ED91FC5094E00324787 /* DSChatKitInfoFetchOption.h */,
+				77450EDA1FC5094E00324787 /* DSChatKitInfoFetchOption.m */,
+				77450EDC1FC50F1700324787 /* DSChatKitInfo.h */,
+				77450EDD1FC50F1700324787 /* DSChatKitInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,6 +378,8 @@
 			children = (
 				77A3C3001F88CDF400F2DA07 /* DSSessionConfig.h */,
 				77C6D61A1F9E019F00C138FB /* DSChatKitMessageProvider.h */,
+				77330C781FBF04F800DE37FF /* DSMessageCellDelegate.h */,
+				775F2E661FC3DC45007397BD /* DSCellLayoutConfig.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -291,6 +403,8 @@
 				77E0B6921F7D2EE700154EF9 /* DSChatKitTests */,
 				77E0B69D1F7D2EE700154EF9 /* DSChatKitUITests */,
 				77E0B6781F7D2EE700154EF9 /* Products */,
+				C8042F4CB5F922F6684C935E /* Pods */,
+				6948F0C555EC6C1940557C04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,8 +463,10 @@
 				77E0B6AD1F7D2F0C00154EF9 /* DSInputView */,
 				77A49BA11F973B3100F7DD10 /* Session */,
 				7791C6241F87892300D69DAA /* Common */,
-				77A3C2FA1F88C78300F2DA07 /* Model */,
 				77A3C2FE1F88CBAA00F2DA07 /* Protocols */,
+				77A3C2FA1F88C78300F2DA07 /* Model */,
+				7789B3691FC413F200005E2B /* Global */,
+				77450EE01FC5543F00324787 /* Util */,
 			);
 			path = DSChatKit;
 			sourceTree = "<group>";
@@ -390,18 +506,18 @@
 			children = (
 				772695EB1FBBCFBF00DBC9DF /* DSSessionPrivateProtocol.h */,
 				77330C771FBE7B1200DE37FF /* DSSessionConfigurateProtocol.h */,
-				77E51FEB1F98C06400EE0334 /* DSSessionConnecter.h */,
-				77E51FEC1F98C06400EE0334 /* DSSessionConnecter.m */,
-				77E51FEE1F98C4E700EE0334 /* DSSessionTableAdapter.h */,
-				77E51FEF1F98C4E700EE0334 /* DSSessionTableAdapter.m */,
+				77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */,
+				77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */,
 				77E51FF11F98C5ED00EE0334 /* DSSessionDataSource.h */,
 				77E51FF21F98C5ED00EE0334 /* DSSessionDataSource.m */,
 				77E51FF41F98C64F00EE0334 /* DSSessionLayout.h */,
 				77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */,
 				77E51FF71F98C70F00EE0334 /* DSSessionInteractor.h */,
 				77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */,
-				77C6D6171F9DFA7D00C138FB /* DSSessionMsgDataSource.h */,
-				77C6D6181F9DFA7D00C138FB /* DSSessionMsgDataSource.m */,
+				77E51FEE1F98C4E700EE0334 /* DSSessionTableAdapter.h */,
+				77E51FEF1F98C4E700EE0334 /* DSSessionTableAdapter.m */,
+				77E51FEB1F98C06400EE0334 /* DSSessionConnecter.h */,
+				77E51FEC1F98C06400EE0334 /* DSSessionConnecter.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -409,16 +525,19 @@
 		77E51FFA1F98CA5C00EE0334 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77E51FFB1F98CA6800EE0334 /* DSSession.h */,
-				77E51FFC1F98CA6800EE0334 /* DSSession.m */,
-				77C6D6211F9E0B6E00C138FB /* DSMessage.h */,
-				77C6D6221F9E0B6E00C138FB /* DSMessage.m */,
-				77C6D61E1F9E0AF300C138FB /* DSMessageModel.h */,
-				77C6D61F1F9E0AF300C138FB /* DSMessageModel.m */,
-				779DF9F11FB2A6CB00AFA465 /* DSTimestampModel.h */,
-				779DF9F21FB2A6CB00AFA465 /* DSTimestampModel.m */,
+				77330C851FBF097F00DE37FF /* DSMessageCellFactory.h */,
+				77330C861FBF097F00DE37FF /* DSMessageCellFactory.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C8042F4CB5F922F6684C935E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDFD22B0EAB4ED659F15CBC2 /* Pods-DSChatKit.debug.xcconfig */,
+				A27A3D83EF5EB11CA9846F7A /* Pods-DSChatKit.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,9 +547,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 77E0B6A31F7D2EE700154EF9 /* Build configuration list for PBXNativeTarget "DSChatKit" */;
 			buildPhases = (
+				FFEE6E4734D1A93BC63A2975 /* [CP] Check Pods Manifest.lock */,
 				77E0B6731F7D2EE700154EF9 /* Sources */,
 				77E0B6741F7D2EE700154EF9 /* Frameworks */,
 				77E0B6751F7D2EE700154EF9 /* Resources */,
+				550B275C884A055CD6E7D9C4 /* [CP] Embed Pods Frameworks */,
+				C62A5DCA6311E72AEBBE6026 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -527,9 +649,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				779D92001FC267BC006C8282 /* icon_message_cell_error@2x.png in Resources */,
+				779D92011FC267BC006C8282 /* icon_message_cell_error@3x.png in Resources */,
+				7792257A1FC7B7BD00092ECD /* icon_session_time_bg@2x.png in Resources */,
 				77E0B6871F7D2EE700154EF9 /* LaunchScreen.storyboard in Resources */,
 				77E0B6841F7D2EE700154EF9 /* Assets.xcassets in Resources */,
 				7785801B1F8E244A005187B5 /* DSInputEmoji.bundle in Resources */,
+				779225791FC7B7BD00092ECD /* icon_session_time_bg@3x.png in Resources */,
 				77E0B6821F7D2EE700154EF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,17 +676,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		550B275C884A055CD6E7D9C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C62A5DCA6311E72AEBBE6026 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFEE6E4734D1A93BC63A2975 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		77E0B6731F7D2EE700154EF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77330C8A1FBF0A9500DE37FF /* DSSessionTimestampCell.m in Sources */,
+				77450EE31FC5551400324787 /* DSChatKitUtil.m in Sources */,
 				77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */,
+				7789B3681FC40C3400005E2B /* DSChatKitEvent.m in Sources */,
 				778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */,
+				77330C831FBF092900DE37FF /* DSMessage.m in Sources */,
+				77450EDB1FC5094E00324787 /* DSChatKitInfoFetchOption.m in Sources */,
+				77330C871FBF097F00DE37FF /* DSMessageCellFactory.m in Sources */,
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
 				7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */,
-				77C6D6201F9E0AF300C138FB /* DSMessageModel.m in Sources */,
 				77E51FF01F98C4E700EE0334 /* DSSessionTableAdapter.m in Sources */,
+				7789B36D1FC4145000005E2B /* DSChatKitUIConfig.m in Sources */,
 				7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
 				77E51FED1F98C06400EE0334 /* DSSessionConnecter.m in Sources */,
@@ -571,21 +751,25 @@
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
 				77330C761FBE72E500DE37FF /* DSChatKitNotificationFirer.m in Sources */,
+				77330C8D1FBF0D6100DE37FF /* DSAvatarImageView.m in Sources */,
 				77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */,
 				77E51FF91F98C70F00EE0334 /* DSSessionInteractor.m in Sources */,
 				778580131F8E146B005187B5 /* DSInputEmojiBottomView.m in Sources */,
+				7758F90B1FC035EE005E86F9 /* DSSessionMessageContentView.m in Sources */,
 				77E51FF31F98C5ED00EE0334 /* DSSessionDataSource.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
 				7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */,
-				77E51FFD1F98CA6800EE0334 /* DSSession.m in Sources */,
+				7758F90E1FC03741005E86F9 /* DSBadgeView.m in Sources */,
+				77450EDE1FC50F1700324787 /* DSChatKitInfo.m in Sources */,
+				77330C821FBF092900DE37FF /* DSMessageModel.m in Sources */,
+				77330C841FBF092900DE37FF /* DSSession.m in Sources */,
 				777792841F90DE6500752427 /* DSInputAudioRecordView.m in Sources */,
 				775CE0C11F7E8D9B00E399B5 /* DSInputTextView.m in Sources */,
-				77C6D6231F9E0B6E00C138FB /* DSMessage.m in Sources */,
 				7742634C1F8EFDDE002BDA84 /* DSChatKit.m in Sources */,
 				77C6D6191F9DFA7D00C138FB /* DSSessionMsgDataSource.m in Sources */,
 				77E51FF61F98C64F00EE0334 /* DSSessionLayout.m in Sources */,
-				779DF9F31FB2A6CB00AFA465 /* DSTimestampModel.m in Sources */,
+				77330C811FBF092900DE37FF /* DSTimestampModel.m in Sources */,
 				7791C6271F87899100D69DAA /* DSPageView.m in Sources */,
 				77E51FE91F9841D400EE0334 /* UIView+DSCategory.m in Sources */,
 			);
@@ -748,6 +932,7 @@
 		};
 		77E0B6A41F7D2EE700154EF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDFD22B0EAB4ED659F15CBC2 /* Pods-DSChatKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -763,6 +948,7 @@
 		};
 		77E0B6A51F7D2EE700154EF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A27A3D83EF5EB11CA9846F7A /* Pods-DSChatKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

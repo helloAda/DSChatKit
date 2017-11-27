@@ -51,7 +51,7 @@
 - (void)setupTableView {
     self.view.backgroundColor = [UIColor whiteColor];
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.backgroundColor = DScolorFromRGBA(0xe4e7ec, 1);
+    _tableView.backgroundColor = DSColorFromRGB(0xe4e7ec);
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.estimatedRowHeight = 0;
     _tableView.estimatedSectionFooterHeight = 0;
