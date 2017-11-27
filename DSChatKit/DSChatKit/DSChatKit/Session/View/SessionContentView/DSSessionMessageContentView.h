@@ -18,7 +18,6 @@
 @interface DSSessionMessageContentView : UIControl
 
 
-
 //消息数据
 @property (nonatomic, strong, readonly) DSMessageModel *model;
 //气泡图片

@@ -11,6 +11,10 @@
 
 @interface DSChatKitBubbleConfig :NSObject
 
+//文本字体颜色
+- (UIColor *)contentTextColor;
+//文本字体大小
+- (UIFont *)contentTextFont;
 //根据状态返回气泡图片
 - (UIImage *)bubbleImage:(UIControlState)state;
 

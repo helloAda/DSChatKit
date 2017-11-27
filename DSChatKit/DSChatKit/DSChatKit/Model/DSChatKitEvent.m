@@ -8,6 +8,9 @@
 
 #import "DSChatKitEvent.h"
 
+NSString *const DSChatKitEventNameTapLabelLink = @"DSChatKitEventNameTapLabelLink";
+
+
 @implementation DSChatKitEvent
 
 @end

@@ -1,14 +1,17 @@
 PODS:
+  - M80AttributedLabel (1.6.3)
   - SDWebImage (4.1.2):
     - SDWebImage/Core (= 4.1.2)
   - SDWebImage/Core (4.1.2)
 
 DEPENDENCIES:
+  - M80AttributedLabel
   - SDWebImage
 
 SPEC CHECKSUMS:
+  M80AttributedLabel: d06543195d3e451d2ea62ad76d04aa9cea7661d4
   SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
 
-PODFILE CHECKSUM: 8dec84e720e953ffd32b36635d28d57caff2beb0
+PODFILE CHECKSUM: aafa575083938750b6123f47290bcd5f046be086
 
 COCOAPODS: 1.2.0

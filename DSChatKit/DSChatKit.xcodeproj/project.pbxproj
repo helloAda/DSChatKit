@@ -42,6 +42,8 @@
 		779225791FC7B7BD00092ECD /* icon_session_time_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779225771FC7B7BC00092ECD /* icon_session_time_bg@3x.png */; };
 		7792257A1FC7B7BD00092ECD /* icon_session_time_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779225781FC7B7BD00092ECD /* icon_session_time_bg@2x.png */; };
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
+		77992D7A1FCBA4B40064E804 /* DSsessionTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */; };
+		77992D7D1FCBB0990064E804 /* DSInputEmojiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D7C1FCBB0990064E804 /* DSInputEmojiParser.m */; };
 		779D92001FC267BC006C8282 /* icon_message_cell_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */; };
 		779D92011FC267BC006C8282 /* icon_message_cell_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
@@ -169,6 +171,10 @@
 		7795AC3D1F7F2EA80034CD3C /* UIView+DSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+DSCategory.h"; sourceTree = "<group>"; };
 		7795AC3E1F7F38490034CD3C /* DSInputScrollTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputScrollTextView.h; sourceTree = "<group>"; };
 		7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputScrollTextView.m; sourceTree = "<group>"; };
+		77992D781FCBA4B40064E804 /* DSsessionTextContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSsessionTextContentView.h; sourceTree = "<group>"; };
+		77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSsessionTextContentView.m; sourceTree = "<group>"; };
+		77992D7B1FCBB0990064E804 /* DSInputEmojiParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiParser.h; sourceTree = "<group>"; };
+		77992D7C1FCBB0990064E804 /* DSInputEmojiParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiParser.m; sourceTree = "<group>"; };
 		779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@2x.png"; sourceTree = "<group>"; };
 		779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@3x.png"; sourceTree = "<group>"; };
 		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
@@ -275,6 +281,8 @@
 			children = (
 				7758F9091FC035EE005E86F9 /* DSSessionMessageContentView.h */,
 				7758F90A1FC035EE005E86F9 /* DSSessionMessageContentView.m */,
+				77992D781FCBA4B40064E804 /* DSsessionTextContentView.h */,
+				77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */,
 			);
 			path = SessionContentView;
 			sourceTree = "<group>";
@@ -497,6 +505,8 @@
 				7763DF6D1F95E12F00E29431 /* DSInputAtCache.h */,
 				7763DF6E1F95E12F00E29431 /* DSInputAtCache.m */,
 				77A49BA61F974E1300F7DD10 /* DSInputActionDelegate.h */,
+				77992D7B1FCBB0990064E804 /* DSInputEmojiParser.h */,
+				77992D7C1FCBB0990064E804 /* DSInputEmojiParser.m */,
 			);
 			path = DSInputView;
 			sourceTree = "<group>";
@@ -740,6 +750,7 @@
 				7791C6201F87561400D69DAA /* DSInputView.m in Sources */,
 				7763DF6F1F95E12F00E29431 /* DSInputAtCache.m in Sources */,
 				77E51FF01F98C4E700EE0334 /* DSSessionTableAdapter.m in Sources */,
+				77992D7A1FCBA4B40064E804 /* DSsessionTextContentView.m in Sources */,
 				7789B36D1FC4145000005E2B /* DSChatKitUIConfig.m in Sources */,
 				7704C6ED1FBDB7CC00064B3F /* DSMessageCell.m in Sources */,
 				7791C6231F87888500D69DAA /* DSInputMoreView.m in Sources */,
@@ -759,6 +770,7 @@
 				77E51FF31F98C5ED00EE0334 /* DSSessionDataSource.m in Sources */,
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
+				77992D7D1FCBB0990064E804 /* DSInputEmojiParser.m in Sources */,
 				7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */,
 				7758F90E1FC03741005E86F9 /* DSBadgeView.m in Sources */,
 				77450EDE1FC50F1700324787 /* DSChatKitInfo.m in Sources */,

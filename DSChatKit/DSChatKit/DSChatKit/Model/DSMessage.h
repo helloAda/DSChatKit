@@ -40,6 +40,9 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 //消息id,唯一标识
 @property (nonatomic, copy, readonly) NSString *messageID;
 
+//消息文本
+@property (nullable, nonatomic, copy) NSString *text;
+
 //消息所属会话
 @property (nonatomic, nonatomic, copy, readonly) DSSession *session;
 

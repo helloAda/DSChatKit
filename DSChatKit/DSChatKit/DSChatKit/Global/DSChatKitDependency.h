@@ -9,6 +9,12 @@
 #ifndef DSChatKitDependency_h
 #define DSChatKitDependency_h
 
+#if __has_include(<M80AttributedLabel/M80AttributedLabel.h>)
+#import <M80AttributedLabel/M80AttributedLabel.h>
+#else
+#import "M80AttributedLabel.h"
+#endif
+
 #if __has_include(<SDWebImageCompat/SDWebImageCompat.h>)
 #import <SDWebImageCompat/SDWebImageCompat.h>
 #else
