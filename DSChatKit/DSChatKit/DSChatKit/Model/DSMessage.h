@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DSSession.h"
-#import "DSGlobalDefs.h"
-
+#import "DSMessageObject.h"
 NS_ASSUME_NONNULL_BEGIN
 
 //消息发送状态
@@ -31,6 +30,9 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 //消息类型
 @property (nonatomic, assign, readonly) DSMessageType messageType;
 
+//消息所属会话
+@property (nonatomic, nonatomic, copy, readonly) DSSession *session;
+
 //消息来源
 @property (nullable, nonatomic, copy) NSString *from;
 
@@ -43,8 +45,8 @@ typedef NS_ENUM(NSInteger, DSMessageAttachmentDownloadState) {
 //消息文本
 @property (nullable, nonatomic, copy) NSString *text;
 
-//消息所属会话
-@property (nonatomic, nonatomic, copy, readonly) DSSession *session;
+//消息附件
+@property (nullable, nonatomic, strong) id<DSMessageObject> messageObject;
 
 //消息附件下载状态 仅针对收到的消息
 @property (nonatomic, assign, readonly) DSMessageAttachmentDownloadState attachmentDownloadState;

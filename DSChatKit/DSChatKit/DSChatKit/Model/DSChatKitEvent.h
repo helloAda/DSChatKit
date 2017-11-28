@@ -22,3 +22,4 @@
 
 
 extern NSString *const DSChatKitEventNameTapLabelLink;
+extern NSString *const DSChatKitEventNameTapContent;

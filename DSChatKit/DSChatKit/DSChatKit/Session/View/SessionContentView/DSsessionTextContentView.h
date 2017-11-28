@@ -9,6 +9,7 @@
 #import "DSSessionMessageContentView.h"
 
 @class M80AttributedLabel;
+
 //文本内容
 @interface DSsessionTextContentView : DSSessionMessageContentView
 

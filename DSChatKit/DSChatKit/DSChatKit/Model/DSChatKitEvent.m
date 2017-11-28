@@ -10,6 +10,10 @@
 
 NSString *const DSChatKitEventNameTapLabelLink = @"DSChatKitEventNameTapLabelLink";
 
+NSString *const DSChatKitEventNameTapContent = @"DSChatKitEventNameTapContent";
+
+
+
 
 @implementation DSChatKitEvent
 

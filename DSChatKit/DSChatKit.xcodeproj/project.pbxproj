@@ -44,6 +44,9 @@
 		7795AC401F7F38490034CD3C /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7795AC3F1F7F38490034CD3C /* DSInputScrollTextView.m */; };
 		77992D7A1FCBA4B40064E804 /* DSsessionTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */; };
 		77992D7D1FCBB0990064E804 /* DSInputEmojiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D7C1FCBB0990064E804 /* DSInputEmojiParser.m */; };
+		77992D801FCC25A40064E804 /* DSSessionUnknowContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D7F1FCC25A40064E804 /* DSSessionUnknowContentView.m */; };
+		77992D831FCC28A40064E804 /* DSSessionImageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D821FCC28A40064E804 /* DSSessionImageContentView.m */; };
+		77992D861FCC2ADF0064E804 /* DSLoadProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77992D851FCC2ADF0064E804 /* DSLoadProgressView.m */; };
 		779D92001FC267BC006C8282 /* icon_message_cell_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */; };
 		779D92011FC267BC006C8282 /* icon_message_cell_error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */; };
 		77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A3C2FC1F88C7C500F2DA07 /* DSMediaItem.m */; };
@@ -63,6 +66,7 @@
 		77E51FF31F98C5ED00EE0334 /* DSSessionDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF21F98C5ED00EE0334 /* DSSessionDataSource.m */; };
 		77E51FF61F98C64F00EE0334 /* DSSessionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */; };
 		77E51FF91F98C70F00EE0334 /* DSSessionInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */; };
+		77FA8FBA1FCCF80C006FBFEA /* DSImageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 77FA8FB91FCCF80C006FBFEA /* DSImageObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +179,12 @@
 		77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSsessionTextContentView.m; sourceTree = "<group>"; };
 		77992D7B1FCBB0990064E804 /* DSInputEmojiParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputEmojiParser.h; sourceTree = "<group>"; };
 		77992D7C1FCBB0990064E804 /* DSInputEmojiParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputEmojiParser.m; sourceTree = "<group>"; };
+		77992D7E1FCC25A40064E804 /* DSSessionUnknowContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionUnknowContentView.h; sourceTree = "<group>"; };
+		77992D7F1FCC25A40064E804 /* DSSessionUnknowContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionUnknowContentView.m; sourceTree = "<group>"; };
+		77992D811FCC28A40064E804 /* DSSessionImageContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionImageContentView.h; sourceTree = "<group>"; };
+		77992D821FCC28A40064E804 /* DSSessionImageContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionImageContentView.m; sourceTree = "<group>"; };
+		77992D841FCC2ADF0064E804 /* DSLoadProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSLoadProgressView.h; sourceTree = "<group>"; };
+		77992D851FCC2ADF0064E804 /* DSLoadProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSLoadProgressView.m; sourceTree = "<group>"; };
 		779D91FE1FC267BB006C8282 /* icon_message_cell_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@2x.png"; sourceTree = "<group>"; };
 		779D91FF1FC267BB006C8282 /* icon_message_cell_error@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_message_cell_error@3x.png"; sourceTree = "<group>"; };
 		77A3C2FB1F88C7C500F2DA07 /* DSMediaItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
@@ -216,6 +226,9 @@
 		77E51FF51F98C64F00EE0334 /* DSSessionLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionLayout.m; sourceTree = "<group>"; };
 		77E51FF71F98C70F00EE0334 /* DSSessionInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSessionInteractor.h; sourceTree = "<group>"; };
 		77E51FF81F98C70F00EE0334 /* DSSessionInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSessionInteractor.m; sourceTree = "<group>"; };
+		77FA8FB81FCCF80C006FBFEA /* DSImageObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSImageObject.h; sourceTree = "<group>"; };
+		77FA8FB91FCCF80C006FBFEA /* DSImageObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSImageObject.m; sourceTree = "<group>"; };
+		77FA8FBB1FCCFA87006FBFEA /* DSMessageObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMessageObject.h; sourceTree = "<group>"; };
 		A27A3D83EF5EB11CA9846F7A /* Pods-DSChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit.release.xcconfig"; sourceTree = "<group>"; };
 		B8CD485CDB119023D44738AA /* libPods-DSChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFD22B0EAB4ED659F15CBC2 /* Pods-DSChatKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSChatKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DSChatKit/Pods-DSChatKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -283,6 +296,10 @@
 				7758F90A1FC035EE005E86F9 /* DSSessionMessageContentView.m */,
 				77992D781FCBA4B40064E804 /* DSsessionTextContentView.h */,
 				77992D791FCBA4B40064E804 /* DSsessionTextContentView.m */,
+				77992D7E1FCC25A40064E804 /* DSSessionUnknowContentView.h */,
+				77992D7F1FCC25A40064E804 /* DSSessionUnknowContentView.m */,
+				77992D811FCC28A40064E804 /* DSSessionImageContentView.h */,
+				77992D821FCC28A40064E804 /* DSSessionImageContentView.m */,
 			);
 			path = SessionContentView;
 			sourceTree = "<group>";
@@ -292,9 +309,9 @@
 			children = (
 				7789B36E1FC422A000005E2B /* DSGlobalDefs.h */,
 				7789B36A1FC4142F00005E2B /* DSChatKitMacro.h */,
+				77450EDF1FC52CF800324787 /* DSChatKitDependency.h */,
 				7789B36B1FC4145000005E2B /* DSChatKitUIConfig.h */,
 				7789B36C1FC4145000005E2B /* DSChatKitUIConfig.m */,
-				77450EDF1FC52CF800324787 /* DSChatKitDependency.h */,
 			);
 			name = Global;
 			path = DSChatKit/DSChatKit/Global;
@@ -341,6 +358,8 @@
 				77330C8C1FBF0D6100DE37FF /* DSAvatarImageView.m */,
 				7758F90C1FC03741005E86F9 /* DSBadgeView.h */,
 				7758F90D1FC03741005E86F9 /* DSBadgeView.m */,
+				77992D841FCC2ADF0064E804 /* DSLoadProgressView.h */,
+				77992D851FCC2ADF0064E804 /* DSLoadProgressView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -365,6 +384,8 @@
 				77330C801FBF092900DE37FF /* DSSession.m */,
 				77330C791FBF092800DE37FF /* DSMessage.h */,
 				77330C7E1FBF092900DE37FF /* DSMessage.m */,
+				77FA8FB81FCCF80C006FBFEA /* DSImageObject.h */,
+				77FA8FB91FCCF80C006FBFEA /* DSImageObject.m */,
 				77330C7F1FBF092900DE37FF /* DSMessageModel.h */,
 				77330C7D1FBF092900DE37FF /* DSMessageModel.m */,
 				77330C7A1FBF092900DE37FF /* DSTimestampModel.h */,
@@ -388,6 +409,7 @@
 				77C6D61A1F9E019F00C138FB /* DSChatKitMessageProvider.h */,
 				77330C781FBF04F800DE37FF /* DSMessageCellDelegate.h */,
 				775F2E661FC3DC45007397BD /* DSCellLayoutConfig.h */,
+				77FA8FBB1FCCFA87006FBFEA /* DSMessageObject.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -742,6 +764,7 @@
 				77330C8A1FBF0A9500DE37FF /* DSSessionTimestampCell.m in Sources */,
 				77450EE31FC5551400324787 /* DSChatKitUtil.m in Sources */,
 				77A3C2FD1F88C7C500F2DA07 /* DSMediaItem.m in Sources */,
+				77FA8FBA1FCCF80C006FBFEA /* DSImageObject.m in Sources */,
 				7789B3681FC40C3400005E2B /* DSChatKitEvent.m in Sources */,
 				778580191F8E1E36005187B5 /* DSInputEmojiManager.m in Sources */,
 				77330C831FBF092900DE37FF /* DSMessage.m in Sources */,
@@ -761,6 +784,7 @@
 				777792811F90567900752427 /* DSInputEmojiButton.m in Sources */,
 				774263491F8EF988002BDA84 /* UIImage+DSCategory.m in Sources */,
 				77E0B67F1F7D2EE700154EF9 /* ViewController.m in Sources */,
+				77992D861FCC2ADF0064E804 /* DSLoadProgressView.m in Sources */,
 				77330C761FBE72E500DE37FF /* DSChatKitNotificationFirer.m in Sources */,
 				77330C8D1FBF0D6100DE37FF /* DSAvatarImageView.m in Sources */,
 				77A49BA41F973B4500F7DD10 /* DSSessionViewController.m in Sources */,
@@ -771,6 +795,8 @@
 				77E0B68A1F7D2EE700154EF9 /* main.m in Sources */,
 				77E0B67C1F7D2EE700154EF9 /* AppDelegate.m in Sources */,
 				77992D7D1FCBB0990064E804 /* DSInputEmojiParser.m in Sources */,
+				77992D831FCC28A40064E804 /* DSSessionImageContentView.m in Sources */,
+				77992D801FCC25A40064E804 /* DSSessionUnknowContentView.m in Sources */,
 				7791C61F1F8755FF00D69DAA /* DSInputToolView.m in Sources */,
 				7758F90E1FC03741005E86F9 /* DSBadgeView.m in Sources */,
 				77450EDE1FC50F1700324787 /* DSChatKitInfo.m in Sources */,
