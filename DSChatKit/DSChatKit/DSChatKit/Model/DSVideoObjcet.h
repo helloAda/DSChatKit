@@ -1,5 +1,5 @@
 //
-//  DSImageObject.h
+//  DSVideoObjcet.h
 //  DSChatKit
 //
 //  Created by 黄铭达 on 2017/11/28.
@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DSMessageObject.h"
 
-@interface DSImageObject : NSObject<DSMessageObject>
+@interface DSVideoObjcet : NSObject<DSMessageObject>
 
-//缩略图本地路径
-@property (nullable, nonatomic, copy, readonly) NSString *thumbPath;
+//视频封面的本地路径
+@property (nullable, nonatomic, copy, readonly) NSString *coverPath;
+
 @end
