@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
-@interface ViewController ()
+#import "DSInputView.h"
+@interface ViewController ()<DSInputViewDelegate, DSInputActionDelegate>
 
+@property (nonatomic, strong) DSInputView *sessionInputView;
+@property (nonatomic, strong) DSSession *session;
 @end
 
 @implementation ViewController

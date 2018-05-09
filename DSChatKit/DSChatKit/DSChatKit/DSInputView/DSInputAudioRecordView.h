@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, DSInputAudioRecordState) {
-    DSInputAudioRecordStart,
-    DSInputAudioRecordRecording,
-    DSInputAudioRecordCancel,
-    DSInputAudioRecordEnd
+    DSInputAudioRecordStart,           //开始记录语音
+    DSInputAudioRecordRecording,       //正在记录语音
+    DSInputAudioRecordCancelling,      //取消记录语音
+    DSInputAudioRecordEnd              //结束记录语音
 };
 
 @interface DSInputAudioRecordView : UIView

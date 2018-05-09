@@ -55,6 +55,11 @@
     return self;
 }
 
+//这个方法会在layoutSubviews之前调用
+- (void)didMoveToWindow {
+    [self toolView];
+}
+
 //监听键盘事件
 - (void)addNotification {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
@@ -65,9 +70,6 @@
     _emojiView.delegate = nil;
 }
 
-- (void)didMoveToWindow {
-    [self toolView];
-}
 - (CGSize)sizeThatFits:(CGSize)size {
     
     CGFloat toolViewHeight = _toolView.height;

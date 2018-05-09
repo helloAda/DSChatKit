@@ -10,7 +10,7 @@
 
 @interface DSInputTextView : UITextView
 
-//占位的富文本
+//默认文字
 @property (nonatomic, strong) NSAttributedString *placeholderAttributedText;
 
 @end
