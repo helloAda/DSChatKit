@@ -10,16 +10,16 @@
 #import "DSInputTextView.h"
 #import "UIView+DSCategory.h"
 
-#define FONTSIZE 14
+#define FONTSIZE 16
 
 @interface DSInputScrollTextView () <UITextViewDelegate>
-
+//textView
 @property (nonatomic, strong) DSInputTextView *textView;
-
+//最大高度 根据最大行数maxNumOfLines而定
 @property (nonatomic, assign) CGFloat maxHeight;
-
+//最小高度 默认为初始化时的高度
 @property (nonatomic, assign) CGFloat minHeight;
-
+//保存上一次的frame
 @property (nonatomic, assign) CGRect previousFrame;
 
 @end
@@ -30,27 +30,18 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        self.textView = [[DSInputTextView alloc] initWithFrame:rect];
+        self.textView = [[DSInputTextView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
+        //保存上一次的frame
         self.previousFrame = frame;
         [self setup];
     }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        self.textView = [[DSInputTextView alloc] initWithFrame:CGRectZero];
-        self.previousFrame = CGRectZero;
-        [self setup];
-    }
-    return self;
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
+    //如果现在的宽度和上一次的保存的宽度不一样，计算新的frame
     if (self.previousFrame.size.width != self.bounds.size.width) {
         self.previousFrame = self.frame;
         [self fitToScrollView];
@@ -89,7 +80,7 @@
 }
 
 #pragma mark -- set
-
+//设置最小行数
 - (void)setMinNumOfLines:(NSInteger)minNumOfLines {
     if (minNumOfLines <= 0) {
         _minHeight = 0;
@@ -99,6 +90,7 @@
     minNumOfLines = minNumOfLines;
 }
 
+//设置最大行数
 - (void)setMaxNumOfLines:(NSInteger)maxNumOfLines {
     if (maxNumOfLines <= 0) {
         self.maxHeight = 0;
@@ -109,9 +101,11 @@
 
 #pragma mark - Private
 
+//初始化
 - (void)setup {
     self.textView.delegate = self;
-    self.textView.scrollEnabled = NO;//要加
+    //禁止滚动
+    self.textView.scrollEnabled = NO;
     self.textView.font = [UIFont systemFontOfSize:FONTSIZE];
     self.textView.backgroundColor = [UIColor clearColor];
     [self addSubview:self.textView];
@@ -120,23 +114,25 @@
     self.showsVerticalScrollIndicator = NO;
 }
 
-//行高
+//计算高度
 - (CGFloat)simulateHeight:(NSInteger)line {
+    //先将旧的字符串保存起来
     NSString *saveText = self.textView.text;
     NSMutableString *newText = [NSMutableString stringWithFormat:@"-"];
-    
+    //先取消代理并隐藏
     self.textView.delegate = nil;
     self.textView.hidden = YES;
-    //追加字符
+    //追加换行字符
     for (NSInteger index = 0; index < line; index++) {
         [newText appendString:@"\n|W|"];
     }
+    //将换行符赋给text然后计算换行的高度
     self.textView.text = newText;
     
     CGFloat textViewMargin = 16;
-    //计算后的高度 扣掉 textViewMargin 和 contentInset.top contentInset.bottom
+    //计算后的高度 扣掉textViewMargin 和 contentInset.top contentInset.bottom
     CGFloat height = [self.textView sizeThatFits:CGSizeMake(self.bounds.size.width, CGFLOAT_MAX)].height - (textViewMargin + self.textView.contentInset.top + self.textView.contentInset.bottom);
-    
+    //将旧文字赋给text，并设置代理
     self.textView.text = saveText;
     self.textView.hidden = NO;
     self.textView.delegate = self;
@@ -299,7 +295,7 @@
 - (void)setText:(NSString *)text
 {
     self.textView.text = text;
-//    [self fitToScrollView];
+    [self fitToScrollView];
 }
 
 - (UIFont *)font

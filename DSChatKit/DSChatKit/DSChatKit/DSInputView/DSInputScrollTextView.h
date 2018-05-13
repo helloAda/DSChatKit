@@ -45,7 +45,7 @@
 //最少行数
 @property (nonatomic, assign) NSInteger minNumOfLines;
 
-//最多行数
+//最多行数 默认为3行
 @property (nonatomic, assign) NSInteger maxNumOfLines;
 
 //输入框
