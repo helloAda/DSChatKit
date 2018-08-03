@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//按钮类型  --  类似微信键盘，在朋友圈之需要表情按钮
+//按钮类型  --  类似微信键盘，在朋友圈只需要表情按钮
 typedef NS_ENUM(NSInteger, DSInputToolViewItemType){
     DSInputToolViewItemTypeVoice,         //声音
     DSInputToolViewItemTypeText,          //文本
@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, DSInputToolStatus) {
 - (void)toolViewWillChangeHeight:(CGFloat)height;
 //toolView已经改变高度
 - (void)toolViewDidChangeHeight:(CGFloat)height;
+
 @end
 
 @interface DSInputToolView : UIView

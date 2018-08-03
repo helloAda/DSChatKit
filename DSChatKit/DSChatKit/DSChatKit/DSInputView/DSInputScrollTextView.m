@@ -48,7 +48,7 @@
     }
 }
 
-//计算大小
+//计算固有大小
 - (CGSize)intrinsicContentSize
 {
     return [self measureFrame:[self.textView sizeThatFits:CGSizeMake(self.bounds.size.width, CGFLOAT_MAX)]].size;
@@ -83,7 +83,7 @@
 //设置最小行数
 - (void)setMinNumOfLines:(NSInteger)minNumOfLines {
     if (minNumOfLines <= 0) {
-        _minHeight = 0;
+        self.minHeight = 0;
         return;
     }
     self.minHeight = [self simulateHeight:minNumOfLines];
@@ -94,6 +94,7 @@
 - (void)setMaxNumOfLines:(NSInteger)maxNumOfLines {
     if (maxNumOfLines <= 0) {
         self.maxHeight = 0;
+        return;
     }
     self.maxHeight = [self simulateHeight:maxNumOfLines];
     _maxNumOfLines = maxNumOfLines;
@@ -114,7 +115,7 @@
     self.showsVerticalScrollIndicator = NO;
 }
 
-//计算高度
+//计算最大最小高度
 - (CGFloat)simulateHeight:(NSInteger)line {
     //先将旧的字符串保存起来
     NSString *saveText = self.textView.text;
@@ -144,16 +145,12 @@
 - (void)fitToScrollView {
     //是否在底部了
     BOOL scrollToBottom = self.contentOffset.y == self.contentSize.height - self.height;
-    //textView的size
+    //设置textView的Frame
     CGSize actualTextViewSize = [self.textView sizeThatFits:CGSizeMake(self.bounds.size.width, CGFLOAT_MAX)];
+    self.textView.height = actualTextViewSize.height;
+    self.contentSize = actualTextViewSize;
+    
     CGRect oldScrollViewFrame = self.frame;
-    
-    CGRect frame = self.bounds;
-    frame.origin = CGPointZero;
-    frame.size.height = actualTextViewSize.height;
-    self.textView.frame = frame;
-    self.contentSize = frame.size;
-    
     CGRect newScrollViewFrame = [self measureFrame:actualTextViewSize];
     
     //将要改变高度
@@ -162,7 +159,7 @@
             [self.textViewDelegate willChangeHeight:newScrollViewFrame.size.height];
         }
     }
-    //改变高度
+    //改变frame, 其实只改变了高度
     self.frame = newScrollViewFrame;
     
     if (scrollToBottom) {
@@ -387,7 +384,7 @@
 - (void)setAttributedText:(NSAttributedString *)attributedText
 {
     self.textView.attributedText = attributedText;
-//    [self fitToScrollView];
+    [self fitToScrollView];
 }
 
 - (UIView *)textViewInputAccessoryView
@@ -455,7 +452,6 @@
 {
     return self.textView.returnKeyType;
 }
-
 
 - (void)scrollRangeToVisible:(NSRange)range
 {

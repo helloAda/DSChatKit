@@ -24,7 +24,6 @@
 //表情资源所在的bundle名称
 @property (nonatomic, copy) NSString *emojiBundleName;
 
-
 //返回用户信息
 - (DSChatKitInfo *)infoByUser:(NSString *)userId option:(DSChatKitInfoFetchOption *)option;
 

@@ -267,7 +267,7 @@
 
 - (void)onTapRecordBtnDragOutside:(UIButton *)btn {
     // 在按钮外手指离开，提示 "松开手指，取消发送"
-    self.recordStatus = DSInputAudioRecordCancel;
+    self.recordStatus = DSInputAudioRecordCancelling;
 }
 
 
